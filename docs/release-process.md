@@ -193,7 +193,7 @@ changes directly impact external users and applications.
 ### Governance
 
 In parallel with testnet deployment, we will initiate the governance process to authorize the upgrade on mainnet.
-This process is covered in more detail in the [SDLC](./SDLC.md).
+This process is covered in more detail in the [SDLC](./sdlc.md).
 
 ### Mainnet
 
