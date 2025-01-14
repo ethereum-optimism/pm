@@ -267,7 +267,8 @@ If your change modifies L1 smart contracts, you’ll need a `superchain-ops` pla
 
 ## Step 7: Alphanet/Betanet Devnet Rollout
 
-Next, it’s time to roll out to the Alphanet, then the Betanet. The full process for this is documented here: [Devnet Operations](https://www.notion.so/Devnet-Operations-15af153ee1628024913ae6c458715131?pvs=21). Make sure to take the timeline into account. Devnets are created on the first Wednesday of every month, so your devnet artifacts need to be ready at least 5 days beforehand.
+Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](./release-process.md) for 
+more details.
 
 ## Step 8: Testnet Rollout
 
