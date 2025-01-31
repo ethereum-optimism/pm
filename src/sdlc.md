@@ -267,7 +267,7 @@ If your change modifies L1 smart contracts, you’ll need a `superchain-ops` pla
 
 ## Step 7: Alphanet/Betanet Devnet Rollout
 
-Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](./release-process.md) for 
+Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](release-process.md) for 
 more details.
 
 ## Step 8: Testnet Rollout
