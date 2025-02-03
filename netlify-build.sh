@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+echo "Installing Rust..."
+rustup default stable
+
 echo "Installing mdbook..."
 curl -L https://github.com/rust-lang/mdBook/releases/download/v0.4.44/mdbook-v0.4.44-x86_64-unknown-linux-gnu.tar.gz | tar xvz
 
