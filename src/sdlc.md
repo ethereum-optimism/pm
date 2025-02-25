@@ -107,11 +107,13 @@ While beyond the scope of this document, it’s imperative that you know what yo
 Changes that affect multiple teams, deviate from existing practices, introduce new technologies, or change the protocol need to go through Design Review. Design Review helpers ensure alignment between engineering teams and keeps the bar for technical rigor high. It works like this:
 
 1. Create a design doc and post it as a PR in either the [`design-docs`](https://github.com/ethereum-optimism/design-docs) or [`design-docs-private`](https://github.com/ethereum-optimism/design-docs-private) repositories. Use the templates in the repositories.
-2. Loop in the leads of each team that might be impacted by your change. These leads are:
+2. Loop in the leads of each team that might be impacted by your change. Please be especially cognizant of any downstream impact of your proposed changes and loop in those leads as well. These leads are:
     1. **Smart Contracts:** @Kelvin Fichter or @Matt Solomon 
     2. **Infrastructure:** @Zach Howard or @Alfonso Munoz de Laborde 
     3. **Protocol:** @Mark Tyneway or @Proto 
     4. **Proofs:** @Paul Dowman or @Adrian Sutton
+    5. **Ecosystem:** @Nick Balestra, @Faina Shalts or @Hamdi Allam
+    6. **Cloud Security:** @Raffaele Mazzitelli or @Alfonso Munoz de Laborde
 3. Announce the PR in the [#pm](https://discord.com/channels/1244729134312198194/1244729134848938033) channel on Discord. Make sure to tag the required domain reviewers to allow for asynchronous review. Leads may tag in additional people as necessary.
 4. Schedule a synchronous design review meeting to ratify the design doc and merge the PR. “Ratified” in this case means there’s no more blocking feedback on the design, and merging it into the main branch of the design docs repo. It’s up to the design doc’s author to decide when this is. If your design doc doesn’t get consensus, close the PR instead. **The goal of the discussion is to move towards closure, where closure is either ratifying or rejecting the design doc under review.** Don’t leave a design review hanging without clear actions to move it towards either ratification or rejection.
 5. If your change requires a spec (see below), use the design review meeting to decide who the spec reviewers will be.
