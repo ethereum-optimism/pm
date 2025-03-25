@@ -8,82 +8,6 @@ This document describes our Software Development Lifecycle (SDLC). Put simply, i
 
 Treat this guide like a flowchart. Not every step will be relevant to every project, so feel free to skip the sections that aren’t relevant to you.
 
-Below, we’ve also included a “build sheet.” Build sheets are used in auto manufacturing to describe the car a customer wants built. They are usually taped to the car’s body, and follow it along the assembly line. You can use the build sheet here to help you track your projects as they move through our SDLC.
-
-## Build Sheet
-
-### Design
-
-- [ ]  Design doc written
-    - PR link:
-- [ ]  Design review scheduled
-- [ ]  Design review held, and docs ratified
-- [ ]  Specs written (as applicable)
-    - PR link:
-- [ ]  Invariants written
-    - PR link:
-
-### Implementation
-
-- [ ]  Code complete
-- [ ]  Automated tests written
-- [ ]  [If Contracts] Invariant tests written
-- [ ]  [If Contracts] Upgrade method implemented
-
-### Validation
-
-- [ ]  FMA written
-    - FMA link:
-- [ ]  FMA reviewed
-- [ ]  FMA action items completed
-- [ ]  Audit request approved
-- [ ]  Audit commit tagged and frozen
-- [ ]  Audit scheduled
-    - Audit date:
-    - Auditor:
-- [ ]  Audit completed
-    - Audit report link:
-- [ ]  Audit uploaded to security reviews folder
-- [ ]  Monitoring/alerting requirements written
-    - Link:
-- [ ]  Run books written
-    - Link:
-
-### Rollout
-
-- [ ]  Release candidates drafted
-    - [ ]  op-node
-    - [ ]  op-geth
-    - [ ]  op-program
-    - [ ]  op-contracts
-- [ ]  Deployed to internal devnet
-- [ ]  Superchain-ops playbook written
-    - Playbook link:
-- [ ]  Superchain-ops playbook reviewed and merged
-- [ ]  Alphanet upgraded
-    - HF activation date:
-- [ ]  Betanet upgraded
-    - HF activation date:
-- [ ]  Deployed to Superchain devnet
-- [ ]  Testnet scheduled (rollout to all chains we hold keys for)
-    - Superchain registry PR:
-    - HF activation date:
-- [ ]  Deployed to testnet
-- [ ]  Mainnet scheduled (rollout to all chains we hold keys for)
-    - Superchain registry PR:
-    - HF activation date:
-- [ ]  Foundation approval requested (2 day SLA)
-- [ ]  FND multisig signs (3 day SLA)
-- [ ]  Security council signs (3 day SLA, in parallel to Foundation SLA)
-
-### Governance
-
-- [ ]  Governance post drafted
-    - Doc link:
-- [ ]  Governance post approved by legal and FND
-- [ ]  Governance post uploaded
-    - Post link:
-
 # SDLC
 
 ## Step 0: Ideation and Planning
@@ -112,7 +36,7 @@ Changes that affect multiple teams, deviate from existing practices, introduce n
     2. **Infrastructure:** @Zach Howard or @Alfonso Munoz de Laborde 
     3. **Protocol:** @Mark Tyneway or @Proto 
     4. **Proofs:** @Paul Dowman or @Adrian Sutton
-    5. **Ecosystem:** @Nick Balestra, @Faina Shalts or @Hamdi Allam
+    5. **Ecosystem:** @Faina Shalts or @Hamdi Allam
     6. **Cloud Security:** @Raffaele Mazzitelli or @Alfonso Munoz de Laborde
 3. Announce the PR in the [#pm](https://discord.com/channels/1244729134312198194/1244729134848938033) channel on Discord. Make sure to tag the required domain reviewers to allow for asynchronous review. Leads may tag in additional people as necessary.
 4. Schedule a synchronous design review meeting to ratify the design doc and merge the PR. “Ratified” in this case means there’s no more blocking feedback on the design, and merging it into the main branch of the design docs repo. It’s up to the design doc’s author to decide when this is. If your design doc doesn’t get consensus, close the PR instead. **The goal of the discussion is to move towards closure, where closure is either ratifying or rejecting the design doc under review.** Don’t leave a design review hanging without clear actions to move it towards either ratification or rejection.
