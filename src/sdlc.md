@@ -228,13 +228,19 @@ Using this framework, we can define the following rough upgrade types and whethe
 
 ### Write FMAs and Determine Audit Requirements
 
-The primary way we get changes reviewed for security do this is through a Failure Mode Analysis (FMA). The FMA process identifies risks and failure modes so that we can mitigate them prior to release. FMAs work best when they are written early in the development process, and iterated upon as work progresses. The FMA will be reviewed by security at the time the design documentation is merged.
+Engineering owns architecture decisions, and the the Failure Modes Analysis (FMA) is the primary way in which it identifies possible risks in the launch and their mitigations. FMAs work best when they are written early in the development process, and iterated upon as work progresses. 
 
-An FMA is always required if governance is needed. Otherwise, it’s up to each team and their embedded security engineers if they need one. The process to get an FMA is described here: [Failure Mode Analyses (FMAs)](https://www.notion.so/Failure-Mode-Analyses-FMAs-1fb9f65a13e542e5b48af6c850763494?pvs=21), and FMAs live in the [design-docs](https://github.com/ethereum-optimism/design-docs/blob/main/security/failure-modes-analysis.md) or [design-docs-private](https://github.com/ethereum-optimism/design-docs-private) repo using this template: https://github.com/ethereum-optimism/design-docs/blob/main/assets/fma-template.md.
+An FMA is always required if governance is needed. Otherwise, it’s up to each team and their embedded security engineers if they need one. **A finalized FMA is required prior to testnet deployments, an audit, and governance proposal.** 
 
-Throughout the development lifecycle, teams will introduce new or updated failure modes into the FMA. Those Pupdates are reviewed by security, with one security person dedicated per project (throughout the project).
+FMAs will be reviewed by Security at the time the design documentation is merged. Security will require that the risks are exhaustive, their mitigations are acceptable, and overall the risk tolerance is consistent across all projects within the collective. The security team signs off on the FMA, and provides feedback to engineering on how they can achieve that sign-off.
 
-The FMA will determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started now if it is needed.
+The FMA author is responsible for program managing and driving the FMA to completion and Engineering needs to factor in the timeline for FMA review as part of our estimates. Speak with Security to determine the ETA on the FMA.
+
+To write an FMA, follow the [FMA process](./fmas.md). More details from the [Security <> Developer Interface](https://www.notion.so/Security-Developer-Interface-232f2c43e8474a2a90e07d3cbe0b33bc?pvs=21):
+
+Throughout the development lifecycle, teams will introduce new or updated failure modes into the FMA. Those updates are reviewed by security, with one security person dedicated per project (throughout the project).
+
+The FMA results will be used to determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started now if it is needed.
 
 ## Step 2: Implement
 
