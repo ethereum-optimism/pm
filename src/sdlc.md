@@ -22,9 +22,13 @@ Below, we’ve also included a “build sheet.” Build sheets are used in auto 
     - PR link:
 - [ ]  Invariants written
     - PR link:
+- [ ]  FMA written
+    - FMA link:
+- [ ]  FMA reviewed
 
 ### Implementation
 
+- [ ]  Audit request approved (as applicable)
 - [ ]  Code complete
 - [ ]  Automated tests written
 - [ ]  [If Contracts] Invariant tests written
@@ -32,11 +36,8 @@ Below, we’ve also included a “build sheet.” Build sheets are used in auto 
 
 ### Validation
 
-- [ ]  FMA written
-    - FMA link:
-- [ ]  FMA reviewed
+
 - [ ]  FMA action items completed
-- [ ]  Audit request approved
 - [ ]  Audit commit tagged and frozen
 - [ ]  Audit scheduled
     - Audit date:
@@ -126,15 +127,15 @@ Keep in mind that the more complex your design is, the longer it will take to re
 
 For more information about the design review process, see [this doc](https://docs.google.com/document/d/1AvPZMUK5aQjdpw8xAFLkQ7d5sYTgaajkG1IEqgXRcu0/edit?tab=t.0).
 
-## Step 1.5: Write Specs
+### Write Specs
 
 Changes that modify smart contracts, consensus, or could otherwise be incorporated into alternative client implementations need to be specified in the [`specs`](https://github.com/ethereum-optimism/specs) repo before being rolled out. This is often done in parallel with writing the implementation, since we often find ways to improve the spec while writing the code.
 
-Write your spec by creating a PR against the specs repo and requesting review from one of the specs reviewers identified during the design review. **Loop in the same set of leads as you would for the design doc to review the spec.** They can assign reviewers based on who has the most knowledge of the area of the spec being modified. 
+Write your spec by creating a PR against the specs repo and requesting review from one of the specs reviewers identified during the design review. **Loop in the same set of leads as you would for the design doc to review the spec.** They can assign reviewers based on who has the most knowledge of the area of the spec being modified.
 
-## Step 2: Determine Governance Impact
+### Determine Governance Impact
 
-Once you’ve developed a design for your change, you’ll need to determine if the change requires governance. Changes that affect consensus, touch smart contracts on L1, modify predeploys, or impact transaction ordering will generally require governance approval. If you’re unsure, consult @Ben Jones.
+As you develop a design for your change, you’ll need to determine if the change requires governance. Changes that affect consensus, touch smart contracts on L1, modify predeploys, or impact transaction ordering will generally require governance approval. If you’re unsure, consult @Ben Jones.
 
 **If YES (Governance Needed):**
 
@@ -146,7 +147,7 @@ Once you’ve developed a design for your change, you’ll need to determine if 
 
 The detailed criteria for what does/does not require governance is described below.
 
-### Detailed Governance Criteria
+#### Detailed Governance Criteria
 
 <aside>
 ⚠️ All upgrades which require the Security Council to take action require a governance vote, if they are not an emergency bugfix.
@@ -225,7 +226,17 @@ Using this framework, we can define the following rough upgrade types and whethe
 
 *Note: The above sets are not always mutually exclusive. If a given change might fall into multiple buckets, if any one of them requires a vote, then the change requires a vote. If you are unsure if something requires a governance vote, ask @Bobby Dresser or @Ben Jones.*
 
-## Step 3: Implement
+### Write FMAs and Determine Audit Requirements
+
+The primary way we get changes reviewed for security do this is through a Failure Mode Analysis (FMA). The FMA process identifies risks and failure modes so that we can mitigate them prior to release. FMAs work best when they are written early in the development process, and iterated upon as work progresses. The FMA will be reviewed by security at the time the design documentation is merged.
+
+An FMA is always required if governance is needed. Otherwise, it’s up to each team and their embedded security engineers if they need one. The process to get an FMA is described here: [Failure Mode Analyses (FMAs)](https://www.notion.so/Failure-Mode-Analyses-FMAs-1fb9f65a13e542e5b48af6c850763494?pvs=21), and FMAs live in the [design-docs](https://github.com/ethereum-optimism/design-docs/blob/main/security/failure-modes-analysis.md) or [design-docs-private](https://github.com/ethereum-optimism/design-docs-private) repo using this template: https://github.com/ethereum-optimism/design-docs/blob/main/assets/fma-template.md.
+
+Throughout the development lifecycle, teams will introduce new or updated failure modes into the FMA. Those Pupdates are reviewed by security, with one security person dedicated per project (throughout the project).
+
+The FMA will determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started now if it is needed.
+
+## Step 2: Implement
 
 At this stage, you can start writing your code. Make sure you follow these standards:
 
@@ -237,13 +248,8 @@ At this stage, you can start writing your code. Make sure you follow these stand
     - Have near 100% test coverage along with invariant tests.
     - When useful, changes should be formally verified with Kontrol.
 
-## Step 4: Failure Mode Analysis (If Needed)
 
-In parallel with implementation, you’ll need to get your changes reviewed for security. The primary way we do this is through a Failure Mode Analysis (FMA). The FMA process identifies risks and failure modes so that we can mitigate them prior to release. FMAs work best when they are written early in the development process, and iterated upon as work progresses.
-
-An FMA is always required if governance is needed. Otherwise, it’s up to each team and their embedded security engineers if they need one. The process to get an FMA is described here: [Failure Mode Analyses (FMAs)](https://www.notion.so/Failure-Mode-Analyses-FMAs-1fb9f65a13e542e5b48af6c850763494?pvs=21), and FMAs live in the design-docs repo using this template: https://github.com/ethereum-optimism/design-docs/blob/main/assets/fma-template.md.
-
-## Step 5: Security Audit (If Needed)
+## Step 3: Security Audit (If Needed)
 
 The FMA may identify the need for a security audit. If so, copy the document [here](https://docs.google.com/document/d/1iJj5kNPvw8Lyov_MYAhFSeDVQtIg14w0L1hjWDHaVSI/edit?tab=t.0) and use it as a template to describe the scope, timing, and motivation for the audit. Send this to @Prithvi Subburaj and @Karl Floersch for approval. Once they’ve approved, you can shop around for auditors and get quotes. Once you’ve selected an auditor you can create request in Zip to pay for the audit.
 
@@ -256,7 +262,7 @@ You should factor the amount of time required for both the audit as well as and 
 
 **Your code should be deployed on a devnet prior to auditing.** This can be one of our monthly devnets, or a custom internal devnet for the purposes of performing the audit.
 
-## Step 6: Create Superchain Ops Tasks (L1 Upgrades Only)
+## Step 4: Create Superchain Ops Tasks (L1 Upgrades Only)
 
 <aside>
 ⚠️
@@ -267,12 +273,12 @@ This section is under construction. Contact @Matt Solomon for questions regardin
 
 If your change modifies L1 smart contracts, you’ll need a `superchain-ops` playbook to execute the multisig transactions with the Security Council.
 
-## Step 7: Alphanet/Betanet Devnet Rollout
+## Step 5: Alphanet/Betanet Devnet Rollout
 
 Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](release-process.md) for 
 more details.
 
-## Step 8: Testnet Rollout
+## Step 6: Testnet Rollout
 
 Next, it’s time to roll out to the official testnet. These networks upgrade multiple chains at once, so they require coordination with DevRel and external partners. These networks are also considered production, so a high degree of stability is expected.
 
@@ -285,7 +291,7 @@ The process to upgrade these networks is:
 5. Use `op-workbench` to deploy onto our infrastructure.
 6. Use `op-deployer` to upgrade L1 smart contracts.
 
-## Step 9: Governance Proposal (If Governance Is Needed)
+## Step 7: Governance Proposal (If Governance Is Needed)
 
 1. **Prepare Proposal:**
     - Reference a stable commit/tag.
@@ -300,7 +306,7 @@ The process to upgrade these networks is:
 3. **Approval & Veto:**
     - Wait for the vote and veto period to complete.
 
-## Step 10: Mainnet Rollout
+## Step 8: Mainnet Rollout
 
 1. Remove the `rc` suffixes from your releases.
 2. Schedule the mainnet upgrade after the veto period expires.
