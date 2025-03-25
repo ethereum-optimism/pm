@@ -1,7 +1,7 @@
 # Failure Mode Analysis (FMAs)
 
 # Overview
-A Failure Mode Analysis is intended to shift left the process of thinking through the risks associated with a project, so that mitigations can be planned for and implemented earlier rather than later. 
+Our Failure Mode Analysis is loosely based on [FME(C)As from aerospace engineering](https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis) and are intended to shift left the process of thinking through the risks associated with a project, so that mitigations can be planned for and implemented earlier rather than later.
 
 # Writing a Failure Modes Analysis
 As part of the effort towards working in the open, we have open sourced both the FMA process and the FMA template so protocol developers from the whole collective can adopt this process. 
