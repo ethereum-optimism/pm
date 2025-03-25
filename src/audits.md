@@ -15,14 +15,14 @@ This document describes the use of software audits at Op Labs. In includes:
 - [Reacting to the results of the audit.](#after-each-audit)
 - [Updating this process according to results](#updating-this-process)
 
-The resulting process enlists PgM and EVM Safety to help the Tech Lead execute the steps that are common to all audits. A back-of-the-envelope formula is used to estimate early the need for audits, later ratified or corrected during SDLC. There is one single document describing the feature, used by all parties, including auditors and CEO.
+The resulting process integrates with the SDLC andenlists PgM and EVM Safety to help the Tech Lead execute the steps that are common to all audits, so that effort and uncertainty are minimised.
 
 For further context on this process you can read [this companion document](https://www.notion.so/About-the-Audit-Process-1b9f153ee162805e8adcd2d50237c622?pvs=21) and the [references](#references).
 
 ## Summary
 
 - [ ]  1. The need for audits is determined during the FMAs in the Design Phase of the SDLC.
-- [ ]  2. During the [Design Review](https://www.notion.so/Engineering-SDLC-v1-0-150f153ee16280d1b021c477957fac2f?pvs=21), [start an Audit Readiness Review document](https://www.notion.so/Audit-Process-Updates-Q1-2025-173f153ee1628030bd48f2e90d06e165?pvs=21), which will be continuously updated.
+- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Audit Readiness Review document](./audit-readiness-template.md), which will be continuously updated.
 - [ ]  3. Once the design is reviewed, [use PgM’s help to engage an auditor](#audit-procurement) and obtain a price estimate.
 - [ ]  4. In parallel with the implementation, forward the Audit Readiness Review and price estimate to Karl for approval.
 - [ ]  5. Once approved, use PgM’s help to complete the operational aspects of the audit. This process can be executed in parallel with all the remaining steps.
@@ -49,7 +49,7 @@ We don’t want to agree audit dates too early, as that will compromise the qual
 
 Auditors must agree to review the fixes to the vulnerabilities reported. Auditors not wishing to agree to this step should not be selected.
 
-Once an auditor has been selected by the feature team, PgM and EVM Safety can assist in preparing a [price and duration estimate](./audit-estimate-template.md). This estimate, along with the Audit Readiness Document, will be forwarded to the CEO for approval.
+Once an auditor has been selected by the feature team, PgM and EVM Safety can assist in preparing an [audit request including a price and duration estimate](./audit-request-template.md). This request, which links to the Audit Readiness Document, will be forwarded to the CEO for approval.
 
 Once approved by the CEO, PgM will support the feature team [requesting the audit on Zip](https://oplabs.ziphq.com/create-workflow-request) as:
  - Choose "Request a Purchase/Vendor Onboarding/Purchase Renewal".
@@ -74,7 +74,7 @@ If a valid high severity vulnerability was found, and this is the last expected 
 
 ## Emergency Process
 
-The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the  [FMAs](https://www.notion.so/Engineering-SDLC-v1-0-150f153ee16280d1b021c477957fac2f?pvs=21) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
+The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the [FMAs](./fmas.md) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
 
 If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Audit Readiness Document](./audit-readiness-template.md) by including a summary to the CEO, if that didn’t exist yet.
 

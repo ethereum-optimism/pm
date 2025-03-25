@@ -22,6 +22,8 @@ As part of the effort towards working in the open, we have open sourced both the
 
 # Determine Audit Requirements
 
+Please contact EVM Safety if you need help determining the audit requirements for your project.
+
 1. Determine the value at risk, by finding out what’s the [maximum severity incident](https://www.notion.so/Incident-Management-17268107b18d4c7492cab3d319d30533?pvs=21) that can be caused by the software to be audited. A SEV1 or SEV0 incident is equivalent to a high severity vulnerability.
 Then determine a subjective risk category by comparing your code to the examples below:
 **Low**: The feature doesn’t involve any components that can cause a significant loss of value.
