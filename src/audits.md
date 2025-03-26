@@ -36,7 +36,7 @@ For further context on this process you can read [this companion document](https
 
 ## Audit Procurement
 
-The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](https://www.notion.so/Engineering-SDLC-v1-0-150f153ee16280d1b021c477957fac2f?pvs=21). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
+The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](./sdlc.md#step-1-design-review-if-applicable). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
 
 The [Security Readiness Document](./security-readiness-template.md) is one of the deliverables from the design review, which will be updated as necessary during the delivery lifecyle. This document contains:
  - A summary of the project (or a link to a suitable summary if it already exists).
@@ -58,7 +58,7 @@ Once approved by the CEO, PgM will support the feature team [requesting the audi
 
 ## Audit Execution
 
-As the implementation and testing approach an state in which the code is ready to be frozen and a release date can be set with relative certainty, a date for the audit can be agreed.
+A devnet deployment is a [requirement for the audit execution](./sdlc.md#step-2b-security-audit-procurement-if-needed). As the date for the alphanet deployment is known with certainty, a date for the audit can be agreed so that the audit can be executed in parallel with the alphanet and betanet deployments and acceptance testing, and concluded before the testnet deployment.
 
 We prefer to communicate with auditors over Slack during the audit. Questions from auditors should be answered promptly and carefully. These questions reveal gaps in the [specifications or the scope](./security-readiness-template.md), which should be amended accordingly.
 
