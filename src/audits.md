@@ -22,7 +22,7 @@ For further context on this process you can read [this companion document](https
 ## Summary
 
 - [ ]  1. The need for audits is determined during the FMAs in the Design Phase of the SDLC.
-- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Audit Readiness Review document](./audit-readiness-template.md), which will be continuously updated.
+- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](./security-readiness-template.md), which will be continuously updated.
 - [ ]  3. Once the design is reviewed, [use PgM’s help to engage an auditor](#audit-procurement) and obtain a price estimate.
 - [ ]  4. In parallel with the implementation, forward the Audit Readiness Review and price estimate to Karl for approval.
 - [ ]  5. Once approved, use PgM’s help to complete the operational aspects of the audit. This process can be executed in parallel with all the remaining steps.
@@ -38,7 +38,7 @@ For further context on this process you can read [this companion document](https
 
 The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](https://www.notion.so/Engineering-SDLC-v1-0-150f153ee16280d1b021c477957fac2f?pvs=21). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
 
-The [Audit Readiness Document](./audit-readiness-template.md) is one of the deliverables from the design review, which will be updated as necessary during the delivery lifecyle. This document contains:
+The [Security Readiness Document](./security-readiness-template.md) is one of the deliverables from the design review, which will be updated as necessary during the delivery lifecyle. This document contains:
  - A summary of the project (or a link to a suitable summary if it already exists).
  - All relevant links to the project documentation, including specs and FMAs.
  - The scope for the audit.
@@ -60,7 +60,7 @@ Once approved by the CEO, PgM will support the feature team [requesting the audi
 
 As the implementation and testing approach an state in which the code is ready to be frozen and a release date can be set with relative certainty, a date for the audit can be agreed.
 
-We prefer to communicate with auditors over Slack during the audit. Questions from auditors should be answered promptly and carefully. These questions reveal gaps in the [specifications or the scope](./audit-readiness-template.md), which should be amended accordingly.
+We prefer to communicate with auditors over Slack during the audit. Questions from auditors should be answered promptly and carefully. These questions reveal gaps in the [specifications or the scope](./security-readiness-template.md), which should be amended accordingly.
 
 Each vulnerability disclosed will be considered separately, fixed on an individual commit, and reviewed again by the auditors on the repo.
 
@@ -76,7 +76,7 @@ If a valid high severity vulnerability was found, and this is the last expected 
 
 The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the [FMAs](./fmas.md) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
 
-If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Audit Readiness Document](./audit-readiness-template.md) by including a summary to the CEO, if that didn’t exist yet.
+If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Security Readiness Document](./security-readiness-template.md) by including a summary of the project, if that didn’t exist yet.
 
 We already know that we need an audit, and we can safely assume that an external audit by Spearbit will fulfil the requirements. Time and cost estimates can be provided with the help of PgM.
 

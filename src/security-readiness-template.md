@@ -1,7 +1,7 @@
-# Audit Readiness Document Template
-Use this template as a guide to create an Audit Readiness Document. Note that such a document will only contain links to documentation elsewhere in the Op Labs documentation repositories.
+# Security Readiness Document Template
+Use this template as a guide to create an Audit Readiness Document. Note that such a document will only contain links to documentation elsewhere in the OP Labs documentation repositories.
 
-## Summary for the CEO
+## Summary of the Project, Feature, or Fix
 
 - *Brief description of the systems, applications, or data to be audited.*
 - *Specific areas of concern or risk to be addressed.*
@@ -24,4 +24,4 @@ In addition to the specs, the change being audited should be defined as a state 
 
 ## References
 
-Partially created from [**Audit Request**](https://www.notion.so/Audit-Request-1a8f153ee1628045b467c262fae21975?pvs=21)
+This template supersedes the [**Audit Request**](https://www.notion.so/Audit-Request-1a8f153ee1628045b467c262fae21975) template.
