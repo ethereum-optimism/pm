@@ -1,0 +1,21 @@
+flowchart TD
+    Start([Start]) --> Step0[Step 0: Ideation and Planning]
+    Step0 --> Step1[Step 1: Design Review]
+    
+    Step1 --> Step2a[Step 2a: Implement]
+    
+    Step1 -->|"start audit procurement immediately"| Step2b[Step 2b: Security Audit]
+    Step2b --> Step5[Step 5: Testnet Rollout]
+    
+    Step2a --> Step3[Step 3: Create Superchain Ops Tasks]
+    
+    Step3 --> Step4[Step 4: Alphanet/Betanet Devnet Rollout]
+    Step4 --> Step5[Step 5: Testnet Rollout]
+    
+    Step5 --> GovCheck{Governance Needed?}
+    GovCheck -->|Yes| Step6[Step 6: Governance Proposal]
+    GovCheck -->|No| Step7[Step 7: Mainnet Rollout]
+    
+    Step6 --> Step7
+    
+    Step7 --> End([End])
