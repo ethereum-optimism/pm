@@ -178,7 +178,7 @@ At this stage, you can start writing your code. Make sure you follow these stand
     - When useful, changes should be formally verified with Kontrol.
 
 
-## Step 2b: Security Audit (If Needed)
+## Step 2b: Security Audit Procurement (If Needed)
 
 The FMA results will be used to determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started in parallel with the implementation if it is needed.
 
@@ -197,10 +197,14 @@ This section is under construction. Contact @Matt Solomon for questions regardin
 
 If your change modifies L1 smart contracts, you’ll need a `superchain-ops` playbook to execute the multisig transactions with the Security Council.
 
-## Step 4: Alphanet/Betanet Devnet Rollout
+## Step 4a: Alphanet/Betanet Devnet Rollout
 
 Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](release-process.md) for 
 more details.
+
+## Step 4b: Audit execution
+
+In parallel to the alphanet/betanet rollout, the [audit should be executed](./audits.md).
 
 ## Step 5: Testnet Rollout
 
