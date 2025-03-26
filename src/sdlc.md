@@ -8,6 +8,8 @@ This document describes our Software Development Lifecycle (SDLC). Put simply, i
 
 Treat this guide like a flowchart. Not every step will be relevant to every project, so feel free to skip the sections that aren’t relevant to you.
 
+
+
 # SDLC
 
 ## Step 0: Ideation and Planning
@@ -163,9 +165,7 @@ To write an FMA, follow the [FMA process](./fmas.md). More details from the [Sec
 
 Throughout the development lifecycle, teams will introduce new or updated failure modes into the FMA. Those updates are reviewed by security, with one security person dedicated per project (throughout the project).
 
-The FMA results will be used to determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started now if it is needed.
-
-## Step 2: Implement
+## Step 2a: Implement
 
 At this stage, you can start writing your code. Make sure you follow these standards:
 
@@ -178,20 +178,15 @@ At this stage, you can start writing your code. Make sure you follow these stand
     - When useful, changes should be formally verified with Kontrol.
 
 
-## Step 3: Security Audit (If Needed)
+## Step 2b: Security Audit (If Needed)
 
-The FMA may identify the need for a security audit. If so, copy the document [here](https://docs.google.com/document/d/1iJj5kNPvw8Lyov_MYAhFSeDVQtIg14w0L1hjWDHaVSI/edit?tab=t.0) and use it as a template to describe the scope, timing, and motivation for the audit. Send this to @Prithvi Subburaj and @Karl Floersch for approval. Once they’ve approved, you can shop around for auditors and get quotes. Once you’ve selected an auditor you can create request in Zip to pay for the audit.
-
-Some audit firms we’ve used successfully in the past include:
-
-- Spearbit
-- OpenZeppelin
+The FMA results will be used to determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started in parallel with the implementation if it is needed.
 
 You should factor the amount of time required for both the audit as well as and necessary fix review into delivery timelines.
 
 **Your code should be deployed on a devnet prior to auditing.** This can be one of our monthly devnets, or a custom internal devnet for the purposes of performing the audit.
 
-## Step 4: Create Superchain Ops Tasks (L1 Upgrades Only)
+## Step 3: Create Superchain Ops Tasks (L1 Upgrades Only)
 
 <aside>
 ⚠️
@@ -202,12 +197,12 @@ This section is under construction. Contact @Matt Solomon for questions regardin
 
 If your change modifies L1 smart contracts, you’ll need a `superchain-ops` playbook to execute the multisig transactions with the Security Council.
 
-## Step 5: Alphanet/Betanet Devnet Rollout
+## Step 4: Alphanet/Betanet Devnet Rollout
 
 Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](release-process.md) for 
 more details.
 
-## Step 6: Testnet Rollout
+## Step 5: Testnet Rollout
 
 Next, it’s time to roll out to the official testnet. These networks upgrade multiple chains at once, so they require coordination with DevRel and external partners. These networks are also considered production, so a high degree of stability is expected.
 
@@ -220,7 +215,7 @@ The process to upgrade these networks is:
 5. Use `op-workbench` to deploy onto our infrastructure.
 6. Use `op-deployer` to upgrade L1 smart contracts.
 
-## Step 7: Governance Proposal (If Governance Is Needed)
+## Step 6: Governance Proposal (If Governance Is Needed)
 
 1. **Prepare Proposal:**
     - Reference a stable commit/tag.
@@ -235,7 +230,7 @@ The process to upgrade these networks is:
 3. **Approval & Veto:**
     - Wait for the vote and veto period to complete.
 
-## Step 8: Mainnet Rollout
+## Step 7: Mainnet Rollout
 
 1. Remove the `rc` suffixes from your releases.
 2. Schedule the mainnet upgrade after the veto period expires.
