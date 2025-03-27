@@ -14,20 +14,21 @@ FMAs live in the [design-docs](https://github.com/ethereum-optimism/design-docs/
 The knowledge obtained in writing the FMA will help you determine the [audit](./audits.md) requirements for your project. EVM Safety is available if you need advice on this step.
 
 1. Broadly determine the risk of the change. To do that consider the FMA and the [Liveness vs. Safety and Reputational vs. Existential matrix](https://gov.optimism.io/t/op-labs-audit-framework-when-to-get-external-security-review-and-how-to-prepare-for-it/6864#what-code-should-be-audited-3) to find out the [maximum severity incident](https://www.notion.so/Incident-Management-17268107b18d4c7492cab3d319d30533?pvs=21) that can be caused by the software to be audited. Then determine a subjective risk category by comparing your code to the descriptions below:
-**Low**: The feature doesn’t involve any components that can cause a significant incident.
-**Medium**: A bug in the feature could lead to a temporary denial of service, or small loss of value across all users, or a large loss of value across a small amount of users.
-**High**: Bugs in the feature could lead to denials of service lasting days or more, or a significant loss of assets.
+<br>**Low**: The feature doesn’t involve any components that can cause a significant incident.
+<br>**Medium**: A bug in the feature could lead to a temporary denial of service, or small loss of value across all users, or a large loss of value across a small amount of users.
+<br>**High**: Bugs in the feature could lead to denials of service lasting days or more, or a significant loss of assets.
 
 2. Determine a subjective complexity category by comparing your code to the examples below:
-**Low:** Any code that is easy to explain to a non technical person, and easy reason about as a whole.
-**Medium:** Code with several components that are each easy to reason about, or with a single feature that is complex.
-**High:** Large codebase with several components, which are complex in their own right. Use of math, algorithms, architectural patterns, integration patterns or features that are novel or difficult to explain to a non technical person.
+<br>**Low:** Any code that is easy to explain to a non technical person, and easy reason about as a whole.
+<br>**Medium:** Code with several components that are each easy to reason about, or with a single feature that is complex.
+<br>**High:** Large codebase with several components, which are complex in their own right. Use of math, algorithms, architectural patterns, integration patterns or features that are novel or difficult to explain to a non technical person.
 
 3. Find the required audits for your risk and complexity in the table below. Read more about [audit types](https://www.notion.so/About-the-Audit-Process-1b9f153ee162805e8adcd2d50237c622?pvs=21).
-    1. The table was [calibrated to past audits](https://www.notion.so/Calibration-1bbf153ee16280d0a17adebee7f797e3?pvs=21), but it is a statement of minimums and you always have the option to execute more audits than specified.
-    2. For internal audits we currently use the Coinbase Protocol Security Team, but you can also upgrade to a solo external audit or external audit by an up-and-coming team instead. EVM Safety doesn’t do internal audits at the time of writing. Internal audits should be executed before external audits.
-    Instead of an internal audit, it is also possible to bring an external auditor to advise during design and implementation. We currently have a Spearbit retainer that can be used for this purpose.
-    3. For high complexity features, contests are also an option. 
+<br>The table was [calibrated to past audits](https://www.notion.so/Calibration-1bbf153ee16280d0a17adebee7f797e3?pvs=21), but it is a statement of minimums and you always have the option to execute more audits than specified.
+<br>Internal audits should be executed before external audits.
+<br>For internal audits we currently use the Coinbase Protocol Security Team. We also have a Spearbit retainer that can be used for internal audits. EVM Safety doesn’t do internal audits.
+<br>Instead of an internal audit, you can also upgrade to a solo external audit or external audit by an up-and-coming team. It is also possible to replace an internal with an external auditor that advises during design and implementation.
+<br>For high complexity features, contests are also an option. 
 
 |  | **Low Risk** | **Medium Risk** | **High Risk** |
 | --- | --- | --- | --- |
