@@ -208,7 +208,10 @@ In parallel to the alphanet/betanet rollout, the [audit should be executed](./au
 
 ## Step 5: Testnet Rollout
 
-Next, it’s time to roll out to the official testnet. These networks upgrade multiple chains at once, so they require coordination with DevRel and external partners. These networks are also considered production, so a high degree of stability is expected.
+Next, it’s time to roll out to the official testnet. These networks upgrade multiple chains at once, so they require coordination with DevRel and external partners. These networks are also considered production, so a high degree of stability is expected. 
+
+Testnets should be kept in sync with Mainnet as much as possible, including maintaing the same ownership structure, contract versions and upgrade paths. Therefore upgrading a testnet should not be done until there is a 
+high degree of confidence that the same upgrade will be deployed to Mainnet.
 
 The process to upgrade these networks is:
 
@@ -218,6 +221,8 @@ The process to upgrade these networks is:
 4. Loop in @Matthew Cruz to schedule your upgrade. Typically partners need at least a week of notice.
 5. Use `op-workbench` to deploy onto our infrastructure.
 6. Use `op-deployer` to upgrade L1 smart contracts.
+
+*Note: The governance proposal is not necessarily blocked by the testnet upgrade. However the Mainnet upgrade should not be executed until at least one week has passed since the testnet upgrade.*
 
 ## Step 6: Governance Proposal (If Governance Is Needed)
 
