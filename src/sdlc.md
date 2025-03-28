@@ -153,19 +153,19 @@ Using this framework, we can define the following rough upgrade types and whethe
 
 ### Write FMAs and Determine Audit Requirements
 
-Engineering owns architecture decisions, and the the Failure Modes Analysis (FMA) is the primary way in which it identifies possible risks in the launch and their mitigations. FMAs work best when they are written early in the development process, and iterated upon as work progresses. 
+Engineering owns architecture decisions, and the the Failure Modes Analysis (FMA) is the primary way in which it identifies possible risks in the launch and their mitigations. FMAs work best when they are written early in the development process, and iterated upon as work progresses.
 
-An FMA is always required if governance is needed. Otherwise, it’s up to each team and their embedded security engineers if they need one. **A finalized FMA is required prior to testnet deployments, an audit, and governance proposal.** 
+An FMA is always required if governance is needed. Otherwise, it’s up to each team and their embedded security engineers if they need one. **A finalized FMA is required prior to testnet deployments, an audit, and governance proposal.**
 
-FMAs will be reviewed by Security at the time the design documentation is merged. Security will require that the risks are exhaustive, their mitigations are acceptable, and overall the risk tolerance is consistent across all projects within the collective. The security team signs off on the FMA, and provides feedback to engineering on how they can achieve that sign-off.
+FMAs will be reviewed by Security at the time the design documentation is merged. Security will require that the risks are exhaustive, their mitigations are acceptable, and overall the risk tolerance is consistent across all projects within the collective. The security team signs off on the FMA, or provides feedback to engineering on how they can achieve that sign-off. The FMA author is responsible for program managing and driving the FMA to completion and Engineering needs to factor in the timeline for FMA review as part of our estimates.
 
-The FMA author is responsible for program managing and driving the FMA to completion and Engineering needs to factor in the timeline for FMA review as part of our estimates. Speak with Security to determine the ETA on the FMA.
+The FMA might have as an outcome one or more mitigation actions. These actions should be executed during implementation and are reviewed by security, with one security person dedicated per project (throughout the project). Until the feature is released onto mainnet, teams can introduce new or updated failure modes into the FMA. Those updates and corresponding mitigation actions are also reviewed by security.
 
 To write an FMA, follow the [FMA process](./fmas.md). More details from the [Security <> Developer Interface](https://www.notion.so/Security-Developer-Interface-232f2c43e8474a2a90e07d3cbe0b33bc?pvs=21):
 
-Throughout the development lifecycle, teams will introduce new or updated failure modes into the FMA. Those updates are reviewed by security, with one security person dedicated per project (throughout the project).
+The FMA will [determine the level of auditing](./audits.md) required for releasing the feature. Follow the linked process to procure and execute the audit.
 
-## Step 2a: Implement
+## Step 2: Implement
 
 At this stage, you can start writing your code. Make sure you follow these standards:
 
@@ -176,6 +176,7 @@ At this stage, you can start writing your code. Make sure you follow these stand
     - When upgrading existing contracts, follow the spec [here](https://github.com/ethereum-optimism/design-docs/blob/main/protocol/l1-upgrades.md).
     - Have near 100% test coverage along with invariant tests.
     - When useful, changes should be formally verified with Kontrol.
+- All actions resulting from the FMA must be completed.
 
 
 ## Step 2b: Security Audit Procurement (If Needed)
@@ -183,8 +184,6 @@ At this stage, you can start writing your code. Make sure you follow these stand
 The FMA results will be used to determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started in parallel with the implementation if it is needed.
 
 You should factor the amount of time required for both the audit as well as and necessary fix review into delivery timelines.
-
-**Your code should be deployed on a devnet prior to auditing.** This can be one of our monthly devnets, or a custom internal devnet for the purposes of performing the audit.
 
 ## Step 3: Create Superchain Ops Tasks (L1 Upgrades Only)
 
@@ -197,14 +196,14 @@ This section is under construction. Contact @Matt Solomon for questions regardin
 
 If your change modifies L1 smart contracts, you’ll need a `superchain-ops` playbook to execute the multisig transactions with the Security Council.
 
-## Step 4a: Alphanet/Betanet Devnet Rollout
+## Step 3b: Audit Execution
+
+Once the code is completed, the [audit can be executed](./audits.md). The Tech Lead can decide to delay the execution of the audit if they have reasons to think it will be more efficient to do so, but it must be completed before the testnet rollout can begin.
+
+## Step 4: Alphanet/Betanet Devnet Rollout
 
 Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](release-process.md) for 
 more details.
-
-## Step 4b: Audit execution
-
-In parallel to the alphanet/betanet rollout, the [audit should be executed](./audits.md).
 
 ## Step 5: Testnet Rollout
 

@@ -1,20 +1,20 @@
 flowchart TD
-    Start([Start]) --> Step0[Step 0: Ideation and Planning]
+    Step0[Step 0: Ideation and Planning]
     Step0 --> Step1[Step 1: Design Review]
-    
-    Step1 --> Step2a[Step 2a: Implement]
+
+    Step1 --> Step2[Step 2: Implement]
     Step1 -->|"If needed"| Step2b[Step 2b: Security Audit Procurement]
-    Step2a --> Step3[Step 3: Create Superchain Ops Tasks]
-    Step2b --> Step3[Step 3: Create Superchain Ops Tasks]
     
-    Step3 --> Step4a[Step 4a: Alphanet/Betanet Devnet Rollout]
-    Step3["Step 3: Create Superchain Ops Tasks<br>(L1 Upgrades Only)"] -->|"If needed"| Step4b[Step 4b: Security Audit Execution]
-    Step4a --> Step5[Step 5: Testnet Rollout]
-    Step4b --> Step5
+    Step2 --> Step3["Step 3: Create Superchain Ops Tasks<br>(L1 Upgrades Only)"]    
+    Step2b --> Step3b[Step 3b: Security Audit Execution]
+    Step2 -->|"If needed"| Step3b
     
+    Step3 --> Step4[Step 4a: Alphanet/Betanet Devnet Rollout]
+    Step3b --> Step5
+    
+    Step4 --> Step5[Step 5: Testnet Rollout]
+    
+    Step5 --> Step7[Step 7: Mainnet Rollout]    
     Step5 -->|"If needed"| Step6[Step 6: Governance Proposal]
-    Step5 --> Step7[Step 7: Mainnet Rollout]
     
     Step6 --> Step7
-    
-    Step7 --> End([End])
