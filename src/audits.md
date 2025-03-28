@@ -49,12 +49,12 @@ We don’t want to agree audit dates too early, as that will compromise the qual
 
 Auditors must agree to review the fixes to the vulnerabilities reported. Auditors not wishing to agree to this step should not be selected.
 
-Once an auditor has been selected by the feature team, PgM and EVM Safety can assist in preparing an [audit request including a price and duration estimate](./audit-request-template.md). This request, which links to the Audit Readiness Document, will be forwarded to the CEO for approval.
+Once an auditor has been selected by the feature team, EVM Safety will assist in estimating the required duration of the audit according to the FMAs. PgM will take that duration estimate and produce a cost estimate based on recent rates from the selected auditor or similarly placed auditors. The Tech Lead and PgM will use these estimates to prepare an [audit request](./audit-request-template.md) which will be forwarded to the CEO for approval.
 
-Once approved by the CEO, PgM will support the feature team [requesting the audit on Zip](https://oplabs.ziphq.com/create-workflow-request) as:
+Once approved by the CEO, the Tech Lead and PgM will [request the audit on Zip](https://oplabs.ziphq.com/create-workflow-request) as:
  - Choose "Request a Purchase/Vendor Onboarding/Purchase Renewal".
  - Under "What are you looking to purchase?" select "Other".
- - If the auditors have not been engaged in the past they will need to supply legal agreements, which will be also included in the Zip request
+ - If the auditors have not been engaged in the past they will need to supply legal agreements, which will be also included in the Zip request.
 
 ## Audit Execution
 
