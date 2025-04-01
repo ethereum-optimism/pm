@@ -40,6 +40,7 @@ Changes that affect multiple teams, deviate from existing practices, introduce n
     4. **Proofs:** @Paul Dowman or @Adrian Sutton
     5. **Ecosystem:** @Faina Shalts or @Hamdi Allam
     6. **Cloud Security:** @Raffaele Mazzitelli or @Alfonso Munoz de Laborde
+    7. **DevRel:** @Matthew Cruz (soyboy)
 3. Announce the PR in the [#pm](https://discord.com/channels/1244729134312198194/1244729134848938033) channel on Discord. Make sure to tag the required domain reviewers to allow for asynchronous review. Leads may tag in additional people as necessary.
 4. Schedule a synchronous design review meeting to ratify the design doc and merge the PR. “Ratified” in this case means there’s no more blocking feedback on the design, and merging it into the main branch of the design docs repo. It’s up to the design doc’s author to decide when this is. If your design doc doesn’t get consensus, close the PR instead. **The goal of the discussion is to move towards closure, where closure is either ratifying or rejecting the design doc under review.** Don’t leave a design review hanging without clear actions to move it towards either ratification or rejection.
 5. If your change requires a spec (see below), use the design review meeting to decide who the spec reviewers will be.
