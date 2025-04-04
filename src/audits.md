@@ -49,7 +49,7 @@ We don’t want to agree audit dates too early, as that will compromise the qual
 
 Auditors must agree to review the fixes to the vulnerabilities reported. Auditors not wishing to agree to this step should not be selected.
 
-Once an auditor has been selected by the feature team, EVM Safety will assist in estimating the required duration of the audit according to the FMAs. PgM will take that duration estimate and produce a cost estimate based on recent rates from the selected auditor or similarly placed auditors. The Tech Lead and PgM will use these estimates to prepare an [audit request](./audit-request-template.md) which will be forwarded to the CEO for approval.
+Once an auditor has been selected by the feature team, EVM Safety will assist in estimating the required duration of the audit according to the FMAs. Auditors won't generally be able to provide a quote until the code is complete or nearly complete. Instead, PgM will take the duration estimate and produce a cost estimate based on recent rates from the selected auditor or similarly placed auditors. The Tech Lead and PgM will use these estimates to prepare an [audit request](./audit-request-template.md) which will be forwarded to the CEO for approval.
 
 Once approved by the CEO, the Tech Lead and PgM will [request the audit on Zip](https://oplabs.ziphq.com/create-workflow-request) as:
  - Choose "Request a Purchase/Vendor Onboarding/Purchase Renewal".
@@ -74,7 +74,7 @@ If a valid high severity vulnerability was found, and this is the last expected 
 
 ## Emergency Process
 
-The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the [FMAs](./fmas.md) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
+The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the [risk modelling](./fmas.md) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
 
 If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Security Readiness Document](./security-readiness-template.md) by including a summary of the project, if that didn’t exist yet.
 
@@ -101,13 +101,9 @@ Conversely, this process can also be reviewed with the goal of relaxing its requ
 
 ## Next Steps
 
-- Update https://github.com/ethereum-optimism/design-docs/blob/main/assets/fma-template.md
-- Update the SDLC in a PR: https://github.com/ethereum-optimism/pm/blob/main/src/sdlc.md
 - Update the [Failure Mode Analyses (FMAs)](https://www.notion.so/Failure-Mode-Analyses-FMAs-1fb9f65a13e542e5b48af6c850763494?pvs=21)
-- Update the  [Security <> Developer Interface](https://www.notion.so/Security-Developer-Interface-232f2c43e8474a2a90e07d3cbe0b33bc?pvs=21)
-- Share in #pmo tagging Aaron Levin and Karl
+- Update the [Security <> Developer Interface](https://www.notion.so/Security-Developer-Interface-232f2c43e8474a2a90e07d3cbe0b33bc?pvs=21)
 - Ask Karl about preferred content of the [review template](https://docs.google.com/document/d/1dtUrBOl47sVs-Hw_2fxnPHx5JCg7qOU4nomh8KEHONU/edit?tab=t.0) that he will receive.
 - Refactor the docs so that they point to the github repo with the reports, instead of pointing at individual reports.
 - The success of this initiative depends partially on the SDLC process being adopted and respected.
-- Include in the [SDLC](https://www.notion.so/Engineering-SDLC-v1-0-150f153ee16280d1b021c477957fac2f?pvs=21) process that audit scope is part of the specs.
 - Include in the [SDLC](https://www.notion.so/Engineering-SDLC-v1-0-150f153ee16280d1b021c477957fac2f?pvs=21) process that other feature teams and EVM Safety should review specs and scope.
