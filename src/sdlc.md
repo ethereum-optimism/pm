@@ -28,22 +28,25 @@ While beyond the scope of this document, it’s imperative that you know what yo
     2. Sequencing and timeline 
     3. Communication Plan (Slack, Discord, Meetings)
 
-## Step 1: Design Review (If Applicable)
+## Step 1: Design Review
 
-Changes that affect multiple teams, deviate from existing practices, introduce new technologies, or change the protocol need to go through Design Review. Design Review helpers ensure alignment between engineering teams and keeps the bar for technical rigor high. It works like this:
+Changes that affect multiple teams, deviate from existing practices, introduce new technologies, or change the protocol need to go through Design Review. The goal is to achieve alignment between engineering teams, document what is known about the project at this stage, and keep the bar for technical rigor high. 
+
+It works like this:
 
 1. Create a design doc and post it as a PR in either the [`design-docs`](https://github.com/ethereum-optimism/design-docs) or [`design-docs-private`](https://github.com/ethereum-optimism/design-docs-private) repositories. Use the templates in the repositories.
 2. Loop in the leads of each team that might be impacted by your change. Please be especially cognizant of any downstream impact of your proposed changes and loop in those leads as well. These leads are:
-    1. **Smart Contracts:** @Kelvin Fichter or @Matt Solomon 
-    2. **Infrastructure:** @Zach Howard or @Alfonso Munoz de Laborde 
-    3. **Protocol:** @Mark Tyneway or @Proto 
-    4. **Proofs:** @Paul Dowman or @Adrian Sutton
-    5. **Ecosystem:** @Faina Shalts or @Hamdi Allam
-    6. **Cloud Security:** @Raffaele Mazzitelli or @Alfonso Munoz de Laborde
-    7. **DevRel:** @Matthew Cruz (soyboy)
+    1. **Product:** @Sam McIngvale
+    2. **Ecosystem:** @Faina Shalts or @Hamdi Allam
+    3. **DevRel:** @Matthew Cruz (soyboy)
+    4. **Protocol:** @Mark Tyneway or @Proto 
+    5. **Proofs:** @Paul Dowman or @Adrian Sutton
+    6. **Infrastructure:** @Zach Howard or @Alfonso Munoz de Laborde 
+    7. **EVM Safety:** @Kelvin Fichter or @Matt Solomon 
+    8. **Cloud Security:** @Raffaele Mazzitelli or @Alfonso Munoz de Laborde
 3. Announce the PR in the [#pm](https://discord.com/channels/1244729134312198194/1244729134848938033) channel on Discord. Make sure to tag the required domain reviewers to allow for asynchronous review. Leads may tag in additional people as necessary.
-4. Schedule a synchronous design review meeting to ratify the design doc and merge the PR. “Ratified” in this case means there’s no more blocking feedback on the design, and merging it into the main branch of the design docs repo. It’s up to the design doc’s author to decide when this is. If your design doc doesn’t get consensus, close the PR instead. **The goal of the discussion is to move towards closure, where closure is either ratifying or rejecting the design doc under review.** Don’t leave a design review hanging without clear actions to move it towards either ratification or rejection.
-5. If your change requires a spec (see below), use the design review meeting to decide who the spec reviewers will be.
+4. Complete the specs, risk modelling, and governance impact analysis substeps as detailed in the subsections below.
+5. Schedule a synchronous design review meeting to ratify the design doc and merge the PR. “Ratified” in this case means there’s no more blocking feedback on the design, and merging it into the main branch of the design docs repo. It’s up to the design doc’s author to decide when this is. If your design doc doesn’t get consensus, close the PR instead. **The goal of the discussion is to move towards closure, where closure is either ratifying or rejecting the design doc under review.** Don’t leave a design review hanging without clear actions to move it towards either ratification or rejection.
 
 Keep in mind that the more complex your design is, the longer it will take to review. Use the following SLA as a rule of thumb for how much time to give your reviewers:
 
@@ -55,7 +58,7 @@ For more information about the design review process, see [this doc](https://doc
 
 ### Write Specs
 
-Changes that modify smart contracts, consensus, or could otherwise be incorporated into alternative client implementations need to be specified in the [`specs`](https://github.com/ethereum-optimism/specs) repo before being rolled out. This is often done in parallel with writing the implementation, since we often find ways to improve the spec while writing the code.
+Changes that modify smart contracts, consensus, or could otherwise be incorporated into alternative client implementations need to be specified in the [`specs`](https://github.com/ethereum-optimism/specs) repo before being rolled out. This is started during the design review, and regularly updated in parallel with writing the implementation, since we often find ways to improve the spec while writing the code.
 
 Write your spec by creating a PR against the specs repo and requesting review from one of the specs reviewers identified during the design review. **Loop in the same set of leads as you would for the design doc to review the spec.** They can assign reviewers based on who has the most knowledge of the area of the spec being modified.
 
@@ -65,11 +68,11 @@ As you develop a design for your change, you’ll need to determine if the chang
 
 **If YES (Governance Needed):**
 
-- Follow the governance path below. This will include writing a Failure Modes Analysis (FMA), getting audits if needed, and writing a governance proposal.
+- Follow the governance path below. The risks must be fully detailed in the risk modelling. Writing a governance proposal will be required.
 
 **If NO (Governance Not Needed):**
 
-- Implement and test, then ship to testnet and mainnet following our rollout procedures. You may still need an FMA - see that section for the criteria.
+- Implement and test, then ship to testnet and mainnet following our rollout procedures. You still need to execute risk modelling normally.
 
 The detailed criteria for what does/does not require governance is described below.
 
@@ -152,19 +155,29 @@ Using this framework, we can define the following rough upgrade types and whethe
 
 *Note: The above sets are not always mutually exclusive. If a given change might fall into multiple buckets, if any one of them requires a vote, then the change requires a vote. If you are unsure if something requires a governance vote, ask @Bobby Dresser or @Ben Jones.*
 
-### Write FMAs and Determine Audit Requirements
+### Risk Modelling
 
-Engineering owns architecture decisions, and the the Failure Modes Analysis (FMA) is the primary way in which it identifies possible risks in the launch and their mitigations. FMAs work best when they are written early in the development process, and iterated upon as work progresses.
+Engineering owns architecture decisions, and Risk Modelling is the primary way in which it identifies possible risks in the launch and their mitigations. Risk modelling works best when it is started early in the development process, and updated as work progresses and more is known about the project.
 
-An FMA is always required if governance is needed. Otherwise, it’s up to each team and their embedded security engineers if they need one. **A finalized FMA is required prior to testnet deployments, an audit, and governance proposal.**
+Risk modelling is always required. In its first iteration, it will identify the risk level of the project. For projects on the higher half of the risk spectrum, a second iteration must provide full detail of the risks and suggested mitigations.
 
-FMAs will be reviewed by Security at the time the design documentation is merged. Security will require that the risks are exhaustive, their mitigations are acceptable, and overall the risk tolerance is consistent across all projects within the collective. The security team signs off on the FMA, or provides feedback to engineering on how they can achieve that sign-off. The FMA author is responsible for program managing and driving the FMA to completion and Engineering needs to factor in the timeline for FMA review as part of our estimates.
+Product must always be consulted when designing risk mitigations, as they can substantially alter the end product.
 
-The FMA might have as an outcome one or more mitigation actions. These actions should be executed during implementation and are reviewed by security, with one security person dedicated per project (throughout the project). Until the feature is released onto mainnet, teams can introduce new or updated failure modes into the FMA. Those updates and corresponding mitigation actions are also reviewed by security.
+Risk modelling will be reviewed by Security before the design documentation is merged. For higher risk projects, Security will require that the risks are exhaustive, their mitigations are acceptable, and overall the risk tolerance is consistent across all projects within the collective.
+
+The security team signs off on the risk modelling, or provides feedback to engineering on how they can achieve that sign-off. The risk modelling author is responsible for program managing and driving the risk modelling process to completion and Engineering needs to factor in the timeline for its Security review as part of our estimates.
+
+It is acknowledged that not everything is known about the project when risk modelling is done in the design step. Still, it is expected that the knowledge present at that stage is enough to accurately obtain a rough risk classification, and to identify a proportion of the existing risks and their mitigations.
+
+The risk modelling will [determine the level of auditing](./audits.md) required for releasing the feature. Follow the linked process to procure and execute the audit.
+
+The risk modelling might have as an outcome one or more mitigation actions. These actions should be executed during implementation and are reviewed by security, with one security person dedicated per project (throughout the project). Until the feature is released onto mainnet, teams can introduce new or updated failure modes into the risk modelling. Those updates and corresponding mitigation actions are also reviewed by security.
+
+**Updated Risk Modelling with executed mitigation actions is required prior to devnet deployments.**
+
+We currently use FMAs as our risk modelling framework, but project teams are encouraged to use other risk modelling frameworks if they are more appropriate and EVM Safety verifies that they provide a similar level of detail.
 
 To write an FMA, follow the [FMA process](./fmas.md). More details from the [Security <> Developer Interface](https://www.notion.so/Security-Developer-Interface-232f2c43e8474a2a90e07d3cbe0b33bc?pvs=21):
-
-The FMA will [determine the level of auditing](./audits.md) required for releasing the feature. Follow the linked process to procure and execute the audit.
 
 ## Step 2: Implement
 
@@ -182,7 +195,7 @@ At this stage, you can start writing your code. Make sure you follow these stand
 
 ## Step 2b: Security Audit Procurement (If Needed)
 
-The FMA results will be used to determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started in parallel with the implementation if it is needed.
+The risk modelling results will be used to determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started in parallel with the implementation if it is needed.
 
 You should factor the amount of time required for both the audit as well as and necessary fix review into delivery timelines.
 
@@ -203,10 +216,14 @@ Once the code is completed, the [audit can be executed](./audits.md). The Tech L
 
 ## Step 4: Alphanet/Betanet Devnet Rollout
 
+**All the steps initiated in the design step must be completed before the devnet rollout can begin. That includes specs, risk modelling, and governance impact analysis.**
+
 Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](release-process.md) for 
 more details.
 
 ## Step 5: Testnet Rollout
+
+**If an audit is required, it must be completed including fixes and fix review before the testnet rollout can begin.**
 
 Next, it’s time to roll out to the official testnet. These networks upgrade multiple chains at once, so they require coordination with DevRel and external partners. These networks are also considered production, so a high degree of stability is expected. 
 
@@ -228,7 +245,7 @@ The process to upgrade these networks is:
 
 1. **Prepare Proposal:**
     - Reference a stable commit/tag.
-    - Include FMA results, audits, testnet performance, and activation schedule.
+    - Include risk modelling results, audits, testnet performance, and activation schedule.
     - Use the standard governance [template](https://gov.optimism.io/t/season-6-charter-aware-upgrade-proposal-template/8134).
 2. **Review & Post:**
     - Obtain Foundation (FND) and Legal approval.
