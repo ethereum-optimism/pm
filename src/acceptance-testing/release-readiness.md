@@ -46,6 +46,7 @@ In this phase we work through the Release Readiness Checklist.
 - Manual acceptance tests are run
   - Feature teams run specific feature tests
   - Platform runs security and load tests
+- Exploratory testing is run by all teams (probing of the system looking for things that we previously missed)
 
 #### 3. Results Analysis
 
@@ -58,7 +59,7 @@ In this phase we work through the Release Readiness Checklist.
 #### 4. Release Determination
 
 - The Platforms team makes the final pass/fail determination
-- A devnet must have ZERO critical issues to be considered for promotion
+- A devnet must have ZERO catastrophic or critical issues (SEV 0 or 1) to be considered for promotion
 - Major issues must have mitigation plans before promotion
 - Minor issues are documented but don't block promotion
 
