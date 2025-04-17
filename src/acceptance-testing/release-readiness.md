@@ -104,3 +104,4 @@ Here are some ideas for future iterations of this process:
 * Security
   1. We should explicitly define what we're checking for and how we do it
   2. For checking smart contracts, we could utilise a tool such as [solcurity](https://github.com/transmissions11/solcurity)
+  3. [Audit](https://github.com/ethereum-optimism/pm/pull/49) procurement and execution
