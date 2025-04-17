@@ -4,7 +4,7 @@
 
 This document defines the process and expectations for devnet releases in the OP Stack. It establishes a consistent framework for determining when a devnet is ready for release and how pass/fail determinations are made. By following these procedures, we can ensure that devnets meet quality standards before release.
 
-While the Platforms team serves as the primary custodian of this release readiness process, its success relies on collaborative ownership with Protocol and contributions from across the organization.
+While the Platforms team serves as the primary custodian of this release readiness process, its success relies on collaborative ownership between Platforms and Protocol as well as contributions from across the organization.
 
 ## Roles and Responsibilities
 
@@ -28,7 +28,7 @@ The primary objectives of the Devnet Release Readiness process are:
 Before a devnet can be considered for release, the following prerequisites must be met:
 
 1. All new features must have acceptance testing coverage in [op-acceptance-tests](https://github.com/ethereum-optimism/optimism/tree/main/op-acceptance-tests)
-2. The acceptance tests, as defined by the Release Readiness Checklist, should be passing
+2. The acceptance tests, as defined by the Release Readiness Checklist, should be passing on a local kurtosis-based devnet
 
 ### Readiness Phases
 
@@ -37,7 +37,7 @@ The devnets are expected to be live for short periods of time. For example, alph
 #### 1. Deployment
 
 - A devnet is deployed according to the [standard process](https://github.com/ethereum-optimism/devnets/blob/main/README.md)
-- Basic infrastructure checks ensure the network is operational
+- Basic infrastructure checks ensure the network is operational (manually for now; to be automated)
 
 
 #### 2. Acceptance Testing
@@ -45,7 +45,7 @@ In this phase we work through the Release Readiness Checklist.
 - Automated acceptance tests are run using op-acceptor
 - Manual acceptance tests are run
   - Feature teams run specific feature tests
-  - Platform runs security and load testing
+  - Platform runs security and load tests
 
 #### 3. Results Analysis
 
