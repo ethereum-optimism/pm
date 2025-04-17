@@ -99,3 +99,6 @@ Here are some ideas for future iterations of this process:
   1. The op-acceptor dashboard, showing test status and results
   2. A Release Readiness Report documenting all tests, issues, and recommendations
   3. Updates in the weekly Protocol Upgrades Call
+* Security
+  1. We should explicitly define what we're checking for and how we do it
+  2. For checking smart contracts, we could utilise a tool such as [solcurity](https://github.com/transmissions11/solcurity)
