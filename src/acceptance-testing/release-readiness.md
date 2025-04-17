@@ -49,10 +49,11 @@ In this phase we work through the Release Readiness Checklist.
 
 #### 3. Results Analysis
 
-- Test results are categorized as:
-  - **Critical Issues**: Bugs that would cause data loss, security vulnerabilities, or severe service disruption
-  - **Major Issues**: Bugs that significantly impact functionality but don't compromise security or data integrity
-  - **Minor Issues**: Non-critical bugs that have workarounds or minimal impact
+- Each of the test results are categorized, in line with our internal incident severity matrix, by their potential impact had they been on mainnet:
+  - **Catastrophic (SEV 0)**: Critical to catastrophic issue that would warrant public notification, leadership awareness (and potential involvement), and potential consultation with legal. A large number of users are impacted by complete or severe loss of functionality, and SLAs have been broken
+  - **Critical (SEV 1)**: Critical issue that would warrant public notification. A large number of users are impacted by severe loss of functionality, and SLAs may have been broken
+  - **Major (SEV 2)**: A functionality issue that would actively impact many user' ability to transact, or a critical issue impacting a subset of users
+  - **Minor (SEV 3)**: Stability or minor customer-impacting issues that would require immediate attention from service owners
 
 #### 4. Release Determination
 
