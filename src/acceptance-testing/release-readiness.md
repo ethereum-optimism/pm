@@ -41,12 +41,12 @@ The devnets are expected to be live for short periods of time. For example, alph
 
 
 #### 2. Acceptance Testing
-In this phase we work through the Release Readiness Checklist.
-- Automated acceptance tests are run using op-acceptor
-- Manual acceptance tests are run
+In this phase we work through the [Release Readiness Checklist](./release-checklist.md).
+- Automated acceptance tests (using op-acceptor)
+- Manual acceptance tests
   - Feature teams run specific feature tests
   - Platform runs security and load tests
-- Exploratory testing is run by all teams (probing of the system looking for things that we previously missed)
+  - Exploratory testing is run by all teams (probing of the system looking for things that we previously missed)
 
 #### 3. Results Analysis
 
