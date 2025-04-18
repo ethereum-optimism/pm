@@ -41,7 +41,7 @@ The devnets are expected to be live for short periods of time. For example, alph
 
 
 #### 2. Acceptance Testing
-In this phase we work through the [Release Readiness Checklist](./release-checklist.md).
+We work through the [Release Readiness Checklist](./release-checklist.md), which includes:
 - Automated acceptance tests (using op-acceptor)
 - Manual acceptance tests
   - Feature teams run specific feature tests

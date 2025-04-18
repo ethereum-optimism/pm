@@ -5,6 +5,7 @@ The most up-to-date list can be found in the Optimism monorepo's [op-acceptance-
 
 
 1. **Network Liveness**
+   - Run the 'base' op-acceptor gate to run non-feature specific checks
    - New blocks are being produced at the expected rate
    - Transactions can be submitted and included in blocks
    - Confirm deposits work
@@ -12,8 +13,8 @@ The most up-to-date list can be found in the Optimism monorepo's [op-acceptance-
    - Confirm that chains do not fork
 
 2. **Network Health**
-   - The SLA dashboard is checked
-   - Alerts for the devnet are checked
+   - The [SLA dashboard](https://optimistic.grafana.net/goto/WGOaGN1NR?orgId=1) is checked; there should be no SLA breaches
+   - Alerts for the devnet are checked; there should be no P1 alerts
 
 3. **Feature Verification**
    - Run the appropriate op-acceptor gate for the network
