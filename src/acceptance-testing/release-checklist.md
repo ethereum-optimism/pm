@@ -13,8 +13,10 @@ The most up-to-date list can be found in the Optimism monorepo's [op-acceptance-
    - Confirm that chains do not fork
 
 2. **Network Health**
-   - The [SLA dashboard](https://optimistic.grafana.net/goto/WGOaGN1NR?orgId=1) is checked; there should be no SLA breaches
-   - Alerts for the devnet are checked; there should be no P1 alerts
+   - The [SLA dashboard](https://optimistic.grafana.net/goto/WGOaGN1NR?orgId=1)
+      - No SLA breaches
+   - Alerts for the devnet
+      - All P1 alerts have either been addressed or have a remediation plan
 
 3. **Feature Verification**
    - Run the appropriate op-acceptor gate for the network
