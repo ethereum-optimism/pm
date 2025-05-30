@@ -3,12 +3,21 @@
 This document provides a detailed checklist of requirements that devnets must meet to be considered ready for release. These are specific tests, metrics, and criteria that are evaluated as part of the [Release Readiness](./release-readiness.md) process. 
 The most up-to-date list can be found in the Optimism monorepo's [op-acceptance-tests](https://github.com/ethereum-optimism/optimism/tree/develop/op-acceptance-tests). 
 
-TODO: We need to revisit this document to define how we'll treat different devnet types (localnet, alphanet, betanet, etc.). For example, the list items may remain the same but we'd modify the stringency/thresholds.
+The criteria for the checks below apply to all devnets (alphanet, betanet, testnet, etc.) and should be considered a good minimum standard for acceptance.
 
 
 ## Sanity Check
 A new Kubernetes-based network typically requires about 30mins to fully startup and settle. After this, we sanity check the basic network health.
 
+- Check the [Superchain Health Dashboard](https://optimistic.grafana.net/goto/kdxUF-fHR?orgId=1)
+   - Setup:
+      - Select infra_env=dev, infra_network=<correct network>, security_network1=<correct network>
+   - Checks:
+      - Overall Infra reports "Healthy"
+      - Overall Chain Progression Health reports "Healthy"
+      - Dispute Mon Security Health 1 reports "Healthy"
+      - Faultproof Withdrawals Security Health 1 reports "Healthy" (if applicable)
+      - OP-Challenger Health reports "Healthy" (if applicable)
 - Check the [SLA dashboard](https://optimistic.grafana.net/goto/WGOaGN1NR?orgId=1)
    - Setup:
       - Select the correct network
@@ -68,10 +77,28 @@ A new Kubernetes-based network typically requires about 30mins to fully startup 
 
 ## Feature Verification
 
+Note: For testing a flashblocks-enabled network, refer to this (Flashblocks RRC](https://www.notion.so/oplabs/Flashblocks-Release-Readiness-Checklist-1faf153ee16280ac80d8cda0162f2392).
+
 ### Automated Testing
 Run automated acceptance tests using [op-acceptor](https://github.com/ethereum-optimism/optimism/tree/develop/op-acceptance-tests).
-   - Use the appropriate feature gate for what the network is testing
-   - Skip long tests (eg. load tests)
+   - Use the appropriate feature gate for the target network. This should not be `base`, but will include it. It should be one of the latest forks, such as `interop` or `flashblocks` which pertains to what the network is deployed as and testing.
+
+The command will be something like so:
+```
+# Navigate to the optimism monorepo
+cd optimism/op-acceptance-tests;
+
+# Set your DEVNET_ENV_URL to point to the absolute path of
+# your target networks devnet-env.json
+DEVSTACK_ORCHESTRATOR=sysext
+DEVNET_ENV_URL=/path/to/the/network/devnet-env.json
+
+$(mise which op-acceptor) \
+--testdir ../optimism \
+--gate interop \
+--validators ../acceptance-tests.yaml \
+--log.level INFO
+```
 
 ### Manual Testing
 Manually run any non-automated feature tests.
@@ -79,5 +106,4 @@ Manually run any non-automated feature tests.
 
 ## Load Testing
 Run automated acceptance tests using op-acceptor
-   - Use the appropriate feature gate for what the network is testing
-   - Do not skip any tests
+   - Use load-testing gate for the network
