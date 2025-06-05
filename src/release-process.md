@@ -77,11 +77,5 @@ least 1 week in advance of any hardfork activation.
 
 **All features must go through an Alphanet and a Betanet before being deployed on Testnet.** This means that you
 should target having your features deployed to the Alphanet and Betanet right before the gov cycle at the very latest.
-For example:
-
-| Governance Cycle           | Latest Alphanet  | Latest Betanet  |
-|----------------------------|------------------|-----------------|
-| Cycle 34 (Feb 27 - Mar 13) | Badger (Feb 17)  | Balrog (Feb 24) |
-| Cycle 35 (Mar 20 - Apr 2)  | Cheetah (Mar 10) | Cupid (Mar 17)  |
 
 See the [release calendar](./release-calendar.md) for the most up-to-date information on the release schedule.
