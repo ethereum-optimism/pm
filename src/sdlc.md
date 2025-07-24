@@ -191,7 +191,7 @@ At this stage, you can start writing your code. Make sure you follow these stand
     - When upgrading existing contracts, follow the spec [here](https://github.com/ethereum-optimism/design-docs/blob/main/protocol/l1-upgrades.md).
     - Have near 100% test coverage along with invariant tests.
     - When useful, changes should be formally verified with Kontrol.
-    - Include any changes to OPCM and OPCMVerify that are required for deployment.
+    - Include any changes to OPCM and OPCMVerify.
 - All actions resulting from the FMA must be completed during implementation and will be reviewed by EVM Safety before the code can be deployed to a devnet.
 
 
