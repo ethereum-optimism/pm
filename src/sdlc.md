@@ -185,7 +185,7 @@ At this stage, you can start writing your code. Make sure you follow these stand
 
 - All consensus code must be behind a hardfork feature flag.
 - All changes must go through code review, and have test automation. Use CodeCov to determine how much of your code is tested, and to identify testing gaps.
-- For new features, add [acceptance tests](acceptance-testing.md).
+- For new features, add [acceptance tests](./acceptance-testing/index.md).
 - All smart contract changes must meet the following minimum standards:
     - Follow the UX and Safety guidelines described [here](https://github.com/ethereum-optimism/design-docs/pull/177).
     - When upgrading existing contracts, follow the spec [here](https://github.com/ethereum-optimism/design-docs/blob/main/protocol/l1-upgrades.md).
