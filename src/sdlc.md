@@ -44,7 +44,7 @@ It works like this:
     6. **Infrastructure:** @Zach Howard or @Alfonso Munoz de Laborde 
     7. **EVM Safety:** @Kelvin Fichter or @Matt Solomon 
     8. **Cloud Security:** @Raffaele Mazzitelli or @Alfonso Munoz de Laborde
-3. Announce the PR in the [#pm](https://discord.com/channels/1244729134312198194/1244729134848938033) channel on Discord. Make sure to tag the required domain reviewers to allow for asynchronous review. Leads may tag in additional people as necessary.
+3. Announce the PR in the [#protocol-general](https://discord.com/channels/1244729134312198194/1244731030301048874) channel on Discord. Make sure to tag the required domain reviewers to allow for asynchronous review. Leads may tag in additional people as necessary.
 4. Complete the specs, risk modelling, and governance impact analysis substeps as detailed in the subsections below.
 5. Schedule a synchronous design review meeting to ratify the design doc and merge the PR. “Ratified” in this case means there’s no more blocking feedback on the design, and merging it into the main branch of the design docs repo. It’s up to the design doc’s author to decide when this is. If your design doc doesn’t get consensus, close the PR instead. **The goal of the discussion is to move towards closure, where closure is either ratifying or rejecting the design doc under review.** Don’t leave a design review hanging without clear actions to move it towards either ratification or rejection.
 
@@ -183,7 +183,7 @@ To write an FMA, follow the [FMA process](./fmas.md). More details from the [Sec
 
 At this stage, you can start writing your code. Make sure you follow these standards:
 
-- All consensus code must be behind a hardfork feature flag.
+- All consensus code must be behind a feature flag, decoupled from the hardfork name (see https://github.com/ethereum-optimism/design-docs/blob/main/protocol/decoupled-features.md).
 - All changes must go through code review, and have test automation. Use CodeCov to determine how much of your code is tested, and to identify testing gaps.
 - For new features, add [acceptance tests](acceptance-testing.md).
 - All smart contract changes must meet the following minimum standards:
