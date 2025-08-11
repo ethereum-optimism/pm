@@ -5,7 +5,7 @@
 [P1: Audit Process](https://www.notion.so/P1-Audit-Process-153f153ee16280cc8aacc75b955986b3?pvs=21)
 
 > When teams need an audit, there should be a clear process with owners for all required steps: defining requirements and invariants, getting internal approvals, working with program management, talking to auditors, determining how many audits to get, what kinds of audits, negotiating audit prices, scheduling the audit, determining if a fix review is needed, and what to do with the results of an audit.
-> 
+>
 
 This document describes the use of software audits at Op Labs. In includes:
 
@@ -15,13 +15,13 @@ This document describes the use of software audits at Op Labs. In includes:
 - [Reacting to the results of the audit.](#after-each-audit)
 - [Updating this process according to results](#updating-this-process)
 
-The resulting process integrates with the SDLC andenlists PgM and EVM Safety to help the Tech Lead execute the steps that are common to all audits, so that effort and uncertainty are minimised.
+The resulting process integrates with the SDLC and enlists PgM and EVM Safety to help the Tech Lead execute the steps that are common to all audits, so that effort and uncertainty are minimised.
 
 For further context on this process you can read [this companion document](https://www.notion.so/About-the-Audit-Process-1b9f153ee162805e8adcd2d50237c622?pvs=21) and the [references](#references).
 
 ## Summary
 
-- [ ]  1. The need for audits is determined during the FMAs in the Design Phase of the SDLC.
+- [ ]  1. The need for audits is determined during the Risk Modeling in the Design Phase of the SDLC.
 - [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](./security-readiness-template.md), which will be continuously updated.
 - [ ]  3. Once the design is reviewed, [use PgM’s help to engage an auditor](#audit-procurement) and obtain a price estimate.
 - [ ]  4. In parallel with the implementation, forward the Audit Readiness Review and price estimate to Karl for approval.

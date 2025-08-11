@@ -45,7 +45,7 @@ The Alphanet can contain any combination of L1 and L2 upgrades. It is entirely a
 only L1 upgrades, and vice versa. By decoupling these two types of upgrades, we can increase our throughput and
 deployment flexibility.
 
-The scope of each Alphanet is finalized during the weekly Protocol Upgrades Call on Tuesdays. To put in a request 
+The scope of each Alphanet is finalized during the weekly Protocol Upgrades Call on Tuesdays. To put in a request
 for an Alphanet once the scope has been finalized, create a new issue on the
 [devnets repo](https://github.com/ethereum-optimism/devnets/issues/new?template=devnet-request.yml).
 
@@ -63,8 +63,8 @@ for a Betanet once the scope has been finalized, create a new issue on the
 
 ## Acceptance Testing
 
-Promoting a feature from Alphanet to Betanet and beyond is contingent upon the feature passing automated acceptance 
-tests. See the [Acceptance Testing](./acceptance-testing.md) document for more information. 
+Promoting a feature from Alphanet to Betanet and beyond is contingent upon the feature passing automated acceptance
+tests. See the [Acceptance Testing](./acceptance-testing/index.md) document for more information.
 
 ## Testnet
 
