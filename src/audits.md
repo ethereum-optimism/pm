@@ -23,9 +23,8 @@ For further context on this process you can read [this companion document](https
 
 - [ ]  1. The need for audits is determined during the FMAs in the Design Phase of the SDLC.
 - [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](./security-readiness-template.md), which will be continuously updated.
-- [ ]  3. Once the design is reviewed, [use PgM’s help to engage an auditor](#audit-procurement) and obtain a price estimate.
-- [ ]  4. In parallel with the implementation, forward the Audit Readiness Review and price estimate to Karl for approval.
-- [ ]  5. Once approved, use PgM’s help to complete the operational aspects of the audit. This process can be executed in parallel with all the remaining steps.
+- [ ]  3. Once the design is approved, post the completed [Security Readiness Review document](./security-readiness-template.md) to #pmo on Slack and tag @aaron to [schedule the audit](#audit-procurement) with the preferred auditors.
+- [ ]  5. PMO will handle approval of the audit (via Zip) and help with the operational aspects of kicking off the audit. This process can be executed in parallel with all the remaining steps.
 - [ ]  6. As implementation and testing approaches the release date, [decide on an audit start date](#audit-procurement).
 - [ ]  7. [Execute the audit](#audit-execution).
 - [ ]  8. [Make all required fixes](#audit-execution) and have them reviewed.
@@ -36,25 +35,25 @@ For further context on this process you can read [this companion document](https
 
 ## Audit Procurement
 
-The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](./sdlc.md#step-1-design-review-if-applicable). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
+The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](./sdlc.md#step-1-design-review-if-applicable) and captured in the [Security Readiness Document](./security-readiness-template.md). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
 
-The [Security Readiness Document](./security-readiness-template.md) is one of the deliverables from the design review, which will be updated as necessary during the delivery lifecyle. This document contains:
+The [Security Readiness Document](./security-readiness-template.md) is one of the deliverables from the design review and the primary artifact needed by PMO to schedule an audit.  This document will be updated as necessary during the delivery lifecyle. It contains:
  - A summary of the project (or a link to a suitable summary if it already exists).
  - All relevant links to the project documentation, including specs and FMAs.
  - The scope for the audit.
 
-We use Spearbit as our preferred auditing services provider. However, the feature team can choose a different provider from [this list](https://www.notion.so/How-to-Select-an-Audit-Firm-b0dee471e23f4712bb8ddc1fb51938f9?pvs=21), from [past engagements](https://www.notion.so/Security-Audits-e56b4226b9db4f2ca48db42d7d439a98?pvs=21), or from any other source if they have a desirable skillset. Program Management (PgM) is available in the #pmo slack channel for assistance with anything related to engaging auditor services.
+We use Spearbit as our preferred auditing services provider and have a established a retainer with them to streamline approval. However, the feature team can choose a different provider from [this list](https://www.notion.so/How-to-Select-an-Audit-Firm-b0dee471e23f4712bb8ddc1fb51938f9?pvs=21), from [past engagements](https://www.notion.so/Security-Audits-e56b4226b9db4f2ca48db42d7d439a98?pvs=21), or from any other source if they have a strong reason to go outside of Spearbit. Program Management (PMO) is available in the #pmo slack channel for assistance with anything related to engaging auditor services.
 
-We don’t want to agree audit dates too early, as that will compromise the quality of the software delivery. Instead, we will agree with auditors to keep them tightly informed of the implementation timeline and process, choosing an exact audit date close to the release date. Auditors not wishing to agree to this process should not be selected.
+We don’t want to agree to exact audit dates too early, as that will compromise the quality of the software delivery. Instead, we will agree with auditors on a high-level schedule to confirm availability and ensure they are kept up to date on the implementation timeline and process, choosing an exact audit date close to the release date. Auditors not wishing to agree to this process should not be selected.
 
 Auditors must agree to review the fixes to the vulnerabilities reported. Auditors not wishing to agree to this step should not be selected.
 
-Once an auditor has been selected by the feature team, EVM Safety will assist in estimating the required duration of the audit according to the FMAs. Auditors won't generally be able to provide a quote until the code is complete or nearly complete. Instead, PgM will take the duration estimate and produce a cost estimate based on recent rates from the selected auditor or similarly placed auditors. The Tech Lead and PgM will use these estimates to prepare an [audit request](./audit-request-template.md) which will be forwarded to the CEO for approval.
-
-Once approved by the CEO, the Tech Lead and PgM will [request the audit on Zip](https://oplabs.ziphq.com/create-workflow-request) as:
- - Choose "Request a Purchase/Vendor Onboarding/Purchase Renewal".
+Once the [Security Readiness Document](./security-readiness-template.md) and auditor preference has been submitted, PMO will request a SOW from the vendor for approval [on Zip](https://oplabs.ziphq.com/create-workflow-request) by:
+ - Choosing "Request a Purchase/Vendor Onboarding/Purchase Renewal".
  - Under "What are you looking to purchase?" select "Other".
  - If the auditors have not been engaged in the past they will need to supply legal agreements, which will be also included in the Zip request.
+
+The audit can only be executed once the Zip request is approved. PMO will coordinate any administrative back and forth, scheduling, or meetings that need to happen leading up the audit approval and kickoff.
 
 ## Audit Execution
 
@@ -68,7 +67,7 @@ For all audit findings that we will fix as part of a later feature, create an is
 
 ## After Each Audit
 
-Once all the fixes are applied and reviewed, upload the audit report [to our repo](https://github.com/ethereum-optimism/optimism/tree/develop/docs/security-reviews).
+Once all the fixes are applied and reviewed, the project lead should upload the final audit report [to our repo](https://github.com/ethereum-optimism/optimism/tree/develop/docs/security-reviews).
 
 If a valid high severity vulnerability was found, and this is the last expected audit for the project, [**a post-mortem must be conducted](./audit-post-mortem.md) and another audit of the same type must be scheduled**. These new audits follow the same process as any other audit.
 
@@ -78,9 +77,9 @@ The audit process is tied to the SDLC process. A fast-track audit process would 
 
 If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Security Readiness Document](./security-readiness-template.md) by including a summary of the project, if that didn’t exist yet.
 
-We already know that we need an audit, and we can safely assume that an external audit by Spearbit will fulfil the requirements. Time and cost estimates can be provided with the help of PgM.
+We already know that we need an audit, and we can safely assume that an external audit by Spearbit will fulfil the requirements.
 
-The documentation and estimates still need to be approved by the CEO. After approval by the CEO, the audit process doesn’t block delivery unless serious vulnerabilities are found.
+The audit request still need to be approved via the Zip process above. If time doesn't allow for this then you should speak with your manager & PMO about your options to fast-track an audit as an exception.
 
 ## Updating This Process
 
@@ -103,7 +102,6 @@ Conversely, this process can also be reviewed with the goal of relaxing its requ
 
 - Update the [Failure Mode Analyses (FMAs)](https://www.notion.so/Failure-Mode-Analyses-FMAs-1fb9f65a13e542e5b48af6c850763494?pvs=21)
 - Update the [Security <> Developer Interface](https://www.notion.so/Security-Developer-Interface-232f2c43e8474a2a90e07d3cbe0b33bc?pvs=21)
-- Ask Karl about preferred content of the [review template](https://docs.google.com/document/d/1dtUrBOl47sVs-Hw_2fxnPHx5JCg7qOU4nomh8KEHONU/edit?tab=t.0) that he will receive.
 - Refactor the docs so that they point to the github repo with the reports, instead of pointing at individual reports.
 - The success of this initiative depends partially on the SDLC process being adopted and respected.
 - Include in the [SDLC](https://www.notion.so/Engineering-SDLC-v1-0-150f153ee16280d1b021c477957fac2f?pvs=21) process that other feature teams and EVM Safety should review specs and scope.
