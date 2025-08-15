@@ -5,7 +5,7 @@
 [P1: Audit Process](https://www.notion.so/P1-Audit-Process-153f153ee16280cc8aacc75b955986b3?pvs=21)
 
 > When teams need an audit, there should be a clear process with owners for all required steps: defining requirements and invariants, getting internal approvals, working with program management, talking to auditors, determining how many audits to get, what kinds of audits, negotiating audit prices, scheduling the audit, determining if a fix review is needed, and what to do with the results of an audit.
-> 
+>
 
 This document describes the use of software audits at Op Labs. In includes:
 
@@ -23,15 +23,15 @@ For further context on this process you can read [this companion document](https
 
 - [ ]  1. The need for audits is determined during the FMAs in the Design Phase of the SDLC.
 - [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](./security-readiness-template.md), which will be continuously updated.
-- [ ]  3. Once the design is approved, post the completed [Security Readiness Review document](./security-readiness-template.md) to #pmo on Slack and tag @aaron to [schedule the audit](#audit-procurement) with the preferred auditors.
-- [ ]  5. PMO will handle approval of the audit (via Zip) and help with the operational aspects of kicking off the audit. This process can be executed in parallel with all the remaining steps.
-- [ ]  6. As implementation and testing approaches the release date, [decide on an audit start date](#audit-procurement).
-- [ ]  7. [Execute the audit](#audit-execution).
-- [ ]  8. [Make all required fixes](#audit-execution) and have them reviewed.
-- [ ]  9: [Publish the deliverables](#after-each-audit)
-- [ ]  10. [If any audit findings are high severity](#after-each-audit) and this is the last scheduled audit:
-    - [ ]  10.1: [Perform a retro](./audit-post-mortem.md).
-    - [ ]  10.2: Perform another audit, [go back to 2](#audit-procurement).
+- [ ]  3. Once the design doc is merged with initial risk modeling completed, post the WIP [Security Readiness Review document](./security-readiness-template.md) to #pmo on Slack and tag @aaron to [schedule the audit](#audit-procurement) with the preferred auditors.
+- [ ]  4. PMO will handle approval of the audit (via Zip) and help with the operational aspects of kicking off the audit. This process can be executed in parallel with all the remaining steps.
+- [ ]  5. As implementation and testing approaches the release date, [decide on an audit start date](#audit-procurement). Make sure the Security Readiness Review document is complete before starting the audit.
+- [ ]  6. [Execute the audit](#audit-execution).
+- [ ]  7. [Make all required fixes](#audit-execution) and have them reviewed.
+- [ ]  8: [Publish the deliverables](#after-each-audit)
+- [ ]  9. [If any audit findings are high severity](#after-each-audit) and this is the last scheduled audit:
+    - [ ]  9.1: [Perform a retro](./audit-post-mortem.md).
+    - [ ]  9.2: Perform another audit, [go back to 2](#audit-procurement).
 
 ## Audit Procurement
 
