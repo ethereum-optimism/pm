@@ -199,7 +199,9 @@ At this stage, you can start writing your code. Make sure you follow these stand
 
 The risk modelling results will be used to determine the audit requirements for the change. The [process to procure and execute an audit](./audits.md) should be started in parallel with the implementation if it is needed.
 
-You should factor the amount of time required for both the audit as well as and necessary fix review into delivery timelines.
+You should factor the amount of time required for both the audit as well as any necessary fix review into delivery timelines. 
+
+Audits of L1 contracts should include any changes to the [OPCM](https://devdocs.optimism.io/contracts-bedrock/contributing/opcm.html) and VerifyOPCM.
 
 ## Step 3: Create Superchain Ops Tasks (L1 Upgrades Only)
 
