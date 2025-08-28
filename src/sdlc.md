@@ -102,6 +102,7 @@ At this stage, you can start writing your code. Make sure you follow these stand
 - All changes must go through code review, and have test automation. Use coverage tooling and reports to identify testing gaps.
 - For new features, add [acceptance tests](./acceptance-testing/index.md).
 - For smart contracts the specs must clearly define assumptions and invariants as described [above](#specs), and you must have ~100% test coverage.
+- Include any changes to [OPCM](https://devdocs.optimism.io/contracts-bedrock/contributing/opcm.html) and VerifyOPCM.
 
 ### Step 3a: Create Superchain Ops tasks (L1 upgrades only)
 
@@ -109,8 +110,6 @@ If your change modifies L1 smart contracts, you’ll need a `superchain-ops` pla
 Contact Blaine Malone for help with this.
 
 ### Step 3b: Audit execution
-
-Here is what to know for audits:
 
 - See [`audits.md`](./audits.md) for more information on how to get approval for and execute an audit.
 - Make sure to leave sufficient leave time for scheduling the audit.
