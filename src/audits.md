@@ -23,9 +23,9 @@ For further context on this process you can read [this companion document](https
 
 - [ ]  1. The need for audits is determined during the Risk Modeling in the Design Phase of the SDLC.
 - [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](./security-readiness-template.md), which will be continuously updated.
-- [ ]  3. Once the design doc is merged with initial risk modeling completed, post the WIP [Security Readiness Review document](./security-readiness-template.md) to #pmo on Slack and tag @aaron to [schedule the audit](#audit-procurement) with the preferred auditors.
-- [ ]  4. PMO will handle approval of the audit (via Zip) and help with the operational aspects of kicking off the audit. This process can be executed in parallel with all the remaining steps.
-- [ ]  5. As implementation and testing approaches the release date, [decide on an audit start date](#audit-procurement). Make sure the Security Readiness Review document is complete before starting the audit.
+- [ ]  3. Once the design doc is merged with initial risk modeling completed you are ready for audit. The suggested path is to use our trusted partner Spearbit by sharing your WIP [Security Readiness Review document](./security-readiness-template.md) to the #oplabs-spearbit-external channel and tagging `@Sharon Ideguchi` & `@Marc Nicholson` in your request. If you would like to use another provider, or do not have access to the Slack channel, please contact EVM Security.
+- [ ]  4. This will result in a SOW from Spearbit which PMO will handle approval of via the Zip system.  *note: this can take several weeks for new vendors*.
+- [ ]  5. As implementation and testing approaches the release date, [decide on an audit start date](#audit-procurement) and final commit to tell the auditors.  Make sure the Security Readiness Review document is complete before starting the audit.
 - [ ]  6. [Execute the audit](#audit-execution).
 - [ ]  7. [Make all required fixes](#audit-execution) and have them reviewed.
 - [ ]  8: [Publish the deliverables](#after-each-audit)
