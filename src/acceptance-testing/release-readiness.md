@@ -29,7 +29,7 @@ Before a devnet can be considered for release, the following prerequisites must 
 
 1. All new features must have acceptance testing coverage in [op-acceptance-tests](https://github.com/ethereum-optimism/optimism/tree/main/op-acceptance-tests)
 2. The acceptance tests, as defined by the Release Readiness Checklist, should be passing on a local kurtosis-based devnet
-3. The [FMA](../fmas.md) for the in-scope features should have been started
+3. The [risk modelling](../risk-modelling.md) for the in-scope features should have been started
 
 ### Readiness Phases
 

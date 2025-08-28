@@ -1,7 +1,7 @@
 # Summary
 
 - [SDLC](./sdlc.md)
-- [FMAs](./fmas.md)
+- [Risk Modelling](./risk-modelling.md)
 - [Audits](./audits.md)
 - [Audit Post-Mortem](./audit-post-mortem.md)
 - [Audit Request Template](./audit-request-template.md)

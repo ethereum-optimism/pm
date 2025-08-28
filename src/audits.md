@@ -15,13 +15,13 @@ This document describes the use of software audits at Op Labs. In includes:
 - [Reacting to the results of the audit.](#after-each-audit)
 - [Updating this process according to results](#updating-this-process)
 
-The resulting process integrates with the SDLC andenlists PgM and EVM Safety to help the Tech Lead execute the steps that are common to all audits, so that effort and uncertainty are minimised.
+The resulting process integrates with the SDLC and enlists PgM and EVM Safety to help the Tech Lead execute the steps that are common to all audits, so that effort and uncertainty are minimised.
 
 For further context on this process you can read [this companion document](https://www.notion.so/About-the-Audit-Process-1b9f153ee162805e8adcd2d50237c622?pvs=21) and the [references](#references).
 
 ## Summary
 
-- [ ]  1. The need for audits is determined during the FMAs in the Design Phase of the SDLC.
+- [ ]  1. The need for audits is determined during the Risk Modeling in the Design Phase of the SDLC.
 - [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](./security-readiness-template.md), which will be continuously updated.
 - [ ]  3. Once the design doc is merged with initial risk modeling completed, post the WIP [Security Readiness Review document](./security-readiness-template.md) to #pmo on Slack and tag @aaron to [schedule the audit](#audit-procurement) with the preferred auditors.
 - [ ]  4. PMO will handle approval of the audit (via Zip) and help with the operational aspects of kicking off the audit. This process can be executed in parallel with all the remaining steps.
@@ -73,7 +73,7 @@ If a valid high severity vulnerability was found, and this is the last expected 
 
 ## Emergency Process
 
-The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the [risk modelling](./fmas.md) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
+The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the [risk modelling](./risk-modelling.md) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
 
 If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Security Readiness Document](./security-readiness-template.md) by including a summary of the project, if that didn’t exist yet.
 
