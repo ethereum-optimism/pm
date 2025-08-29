@@ -22,10 +22,10 @@ For further context on this process you can read [this companion document](https
 ## Summary
 
 - [ ]  1. The need for audits is determined during the Risk Modeling in the Design Phase of the SDLC.
-- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](./security-readiness-template.md), which will be continuously updated.
-- [ ]  3. Once the design doc is merged with initial risk modeling completed, post the WIP [Security Readiness Review document](./security-readiness-template.md) to #pmo on Slack and tag @aaron to [schedule the audit](#audit-procurement) with the preferred auditors.
-- [ ]  4. PMO will handle approval of the audit (via Zip) and help with the operational aspects of kicking off the audit. This process can be executed in parallel with all the remaining steps.
-- [ ]  5. As implementation and testing approaches the release date, [decide on an audit start date](#audit-procurement). Make sure the Security Readiness Review document is complete before starting the audit.
+- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](https://www.notion.so/oplabs/Security-Readiness-Document-1a8f153ee1628045b467c262fae21975), which will be continuously updated.
+- [ ]  3. Once the design doc is merged with initial risk modeling completed you can start audit procurement. The suggested path is to use our trusted partner Spearbit by sharing your [Security Readiness Review document](./security-readiness-template.md) to the #oplabs-spearbit-external channel and tagging `@Sharon Ideguchi` & `@Marc Nicholson` in your request. If you would like to use another provider, or do not have access to the Slack channel, please contact EVM Security.
+- [ ]  4. This will result in a SOW from Spearbit which PMO will handle approval of via the Zip system.  *note: this can take several weeks for new vendors*.
+- [ ]  5. As implementation and testing approaches the release date, [decide on an audit start date](#audit-procurement) and final commit to tell the auditors.  Make sure the Security Readiness Review document is complete before starting the audit.
 - [ ]  6. [Execute the audit](#audit-execution).
 - [ ]  7. [Make all required fixes](#audit-execution) and have them reviewed.
 - [ ]  8: [Publish the deliverables](#after-each-audit)
@@ -35,7 +35,7 @@ For further context on this process you can read [this companion document](https
 
 ## Audit Procurement
 
-The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](./sdlc.md#step-1-design-review-if-applicable) and captured in the [Security Readiness Document](./security-readiness-template.md). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
+The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](./sdlc.md#step-1-design-review-if-applicable) and captured in the [Security Readiness Document](https://www.notion.so/oplabs/Security-Readiness-Document-1a8f153ee1628045b467c262fae21975). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
 
 The [Security Readiness Document](./security-readiness-template.md) is one of the deliverables from the design review and the primary artifact needed by PMO to schedule an audit.  This document will be updated as necessary during the delivery lifecyle. It contains:
  - A summary of the project (or a link to a suitable summary if it already exists).
@@ -44,16 +44,16 @@ The [Security Readiness Document](./security-readiness-template.md) is one of th
 
 We use Spearbit as our preferred auditing services provider and have a established a retainer with them to streamline approval. However, the feature team can choose a different provider from [this list](https://www.notion.so/How-to-Select-an-Audit-Firm-b0dee471e23f4712bb8ddc1fb51938f9?pvs=21), from [past engagements](https://www.notion.so/Security-Audits-e56b4226b9db4f2ca48db42d7d439a98?pvs=21), or from any other source if they have a strong reason to go outside of Spearbit. Program Management (PMO) is available in the #pmo slack channel for assistance with anything related to engaging auditor services.
 
-We don’t want to agree to exact audit dates too early, as that will compromise the quality of the software delivery. Instead, we will agree with auditors on a high-level schedule to confirm availability and ensure they are kept up to date on the implementation timeline and process, choosing an exact audit date close to the release date. Auditors not wishing to agree to this process should not be selected.
+We will agree with auditors on a high-level schedule to confirm availability and ensure they are kept up to date on the implementation timeline and process, choosing an exact audit date close to the release date. Auditors not wishing to agree to this process should not be selected.
 
 Auditors must agree to review the fixes to the vulnerabilities reported. Auditors not wishing to agree to this step should not be selected.
 
-Once the [Security Readiness Document](./security-readiness-template.md) and auditor preference has been submitted, PMO will request a SOW from the vendor for approval [on Zip](https://oplabs.ziphq.com/create-workflow-request) by:
+Once the [Security Readiness Document](https://www.notion.so/oplabs/Security-Readiness-Document-1a8f153ee1628045b467c262fae21975) and auditor preference has been submitted, a SOW will be obtained from the vendor for approval [on Zip](https://oplabs.ziphq.com/create-workflow-request) by:
  - Choosing "Request a Purchase/Vendor Onboarding/Purchase Renewal".
  - Under "What are you looking to purchase?" select "Other".
  - If the auditors have not been engaged in the past they will need to supply legal agreements, which will be also included in the Zip request.
 
-The audit can only be executed once the Zip request is approved. PMO will coordinate any administrative back and forth, scheduling, or meetings that need to happen leading up the audit approval and kickoff.
+The audit can only be executed once the Zip request is approved.
 
 ## Audit Execution
 
@@ -75,7 +75,7 @@ If a valid high severity vulnerability was found, and this is the last expected 
 
 The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the [risk modelling](./risk-modelling.md) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
 
-If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Security Readiness Document](./security-readiness-template.md) by including a summary of the project, if that didn’t exist yet.
+If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Security Readiness Document](https://www.notion.so/oplabs/Security-Readiness-Document-1a8f153ee1628045b467c262fae21975) by including a summary of the project, if that didn’t exist yet.
 
 We already know that we need an audit, and we can safely assume that an external audit by Spearbit will fulfil the requirements.
 
@@ -98,10 +98,4 @@ Conversely, this process can also be reviewed with the goal of relaxing its requ
 - [Audit Requirements for Fault Proof Contracts](https://www.notion.so/Audit-Requirements-for-Fault-Proof-Contracts-11cf153ee162803f84fed5d811206333?pvs=21)
 - [Audits and shipping secure code](https://www.notion.so/Audits-and-shipping-secure-code-198f153ee162802e8fcae67e7cd15981?pvs=21) from @Paul Dowman summarizing Proofs informal audit framework and adding some ideas.
 
-## Next Steps
 
-- Update the [Failure Mode Analyses (FMAs)](https://www.notion.so/Failure-Mode-Analyses-FMAs-1fb9f65a13e542e5b48af6c850763494?pvs=21)
-- Update the [Security <> Developer Interface](https://www.notion.so/Security-Developer-Interface-232f2c43e8474a2a90e07d3cbe0b33bc?pvs=21)
-- Refactor the docs so that they point to the github repo with the reports, instead of pointing at individual reports.
-- The success of this initiative depends partially on the SDLC process being adopted and respected.
-- Include in the [SDLC](https://www.notion.so/Engineering-SDLC-v1-0-150f153ee16280d1b021c477957fac2f?pvs=21) process that other feature teams and EVM Safety should review specs and scope.
