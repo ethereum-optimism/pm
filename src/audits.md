@@ -22,7 +22,7 @@ For further context on this process you can read [this companion document](https
 ## Summary
 
 - [ ]  1. The need for audits is determined during the Risk Modeling in the Design Phase of the SDLC.
-- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](./security-readiness-template.md), which will be continuously updated.
+- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start an Security Readiness Review document](https://www.notion.so/oplabs/Security-Readiness-Review-1a8f153ee1628045b467c262fae21975), which will be continuously updated.
 - [ ]  3. Once the design doc is merged with initial risk modeling completed you can start audit procurement. The suggested path is to use our trusted partner Spearbit by sharing your [Security Readiness Review document](./security-readiness-template.md) to the #oplabs-spearbit-external channel and tagging `@Sharon Ideguchi` & `@Marc Nicholson` in your request. If you would like to use another provider, or do not have access to the Slack channel, please contact EVM Security.
 - [ ]  4. This will result in a SOW from Spearbit which PMO will handle approval of via the Zip system.  *note: this can take several weeks for new vendors*.
 - [ ]  5. As implementation and testing approaches the release date, [decide on an audit start date](#audit-procurement) and final commit to tell the auditors.  Make sure the Security Readiness Review document is complete before starting the audit.
@@ -35,7 +35,7 @@ For further context on this process you can read [this companion document](https
 
 ## Audit Procurement
 
-The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](./sdlc.md#step-1-design-review-if-applicable) and captured in the [Security Readiness Document](./security-readiness-template.md). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
+The audit requirements are established during the project FMAs in the [Design Review phase of the SDLC](./sdlc.md#step-1-design-review-if-applicable) and captured in the [Security Readiness Document](https://www.notion.so/oplabs/Security-Readiness-Review-1a8f153ee1628045b467c262fae21975). Both the audit procurement and the feature implementation can start in parallel once the design is reviewed.
 
 The [Security Readiness Document](./security-readiness-template.md) is one of the deliverables from the design review and the primary artifact needed by PMO to schedule an audit.  This document will be updated as necessary during the delivery lifecyle. It contains:
  - A summary of the project (or a link to a suitable summary if it already exists).
@@ -48,7 +48,7 @@ We will agree with auditors on a high-level schedule to confirm availability and
 
 Auditors must agree to review the fixes to the vulnerabilities reported. Auditors not wishing to agree to this step should not be selected.
 
-Once the [Security Readiness Document](./security-readiness-template.md) and auditor preference has been submitted, a SOW will be obtained from the vendor for approval [on Zip](https://oplabs.ziphq.com/create-workflow-request) by:
+Once the [Security Readiness Document](https://www.notion.so/oplabs/Security-Readiness-Review-1a8f153ee1628045b467c262fae21975) and auditor preference has been submitted, a SOW will be obtained from the vendor for approval [on Zip](https://oplabs.ziphq.com/create-workflow-request) by:
  - Choosing "Request a Purchase/Vendor Onboarding/Purchase Renewal".
  - Under "What are you looking to purchase?" select "Other".
  - If the auditors have not been engaged in the past they will need to supply legal agreements, which will be also included in the Zip request.
@@ -75,7 +75,7 @@ If a valid high severity vulnerability was found, and this is the last expected 
 
 The audit process is tied to the SDLC process. A fast-track audit process would only be needed if we find out that we need audits later in the SDLC process, most likely as a result of updates to the [risk modelling](./risk-modelling.md) or [excessive vulnerabilities in the last scheduled audit](#after-each-audit). The process described above is still applicable in these cases.
 
-If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Security Readiness Document](./security-readiness-template.md) by including a summary of the project, if that didn’t exist yet.
+If the audit process is started in later stages of the SDLC, the documentation will be ready and can be put together as the [Security Readiness Document](https://www.notion.so/oplabs/Security-Readiness-Review-1a8f153ee1628045b467c262fae21975) by including a summary of the project, if that didn’t exist yet.
 
 We already know that we need an audit, and we can safely assume that an external audit by Spearbit will fulfil the requirements.
 
