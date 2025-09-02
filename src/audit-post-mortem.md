@@ -1,5 +1,5 @@
 # Audit Post-Mortem
-It is not realistic to ask of anyone to either build code completely free of bugs, nor to catch all bugs in code that has already been written. However, we can should demand that no severities of a certain category are found after applying a number of security measures. In particular, we want to ensure that SEV1+ bugs are never found in the last pre-production layer or during production.
+It is not realistic to ask of anyone to either build code completely free of bugs, nor to catch all bugs in code that has already been written. However, we can demand that no severities of a certain category are found after applying a number of security measures. In particular, we want to ensure that SEV1+ bugs are never found in the last pre-production layer or during production.
 
 This is a process to apply when this expectation is not met, and is based in **reasonable expectations** from all involved, with no one expected to have extraordinary capabilities.
 
