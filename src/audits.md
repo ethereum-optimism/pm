@@ -22,7 +22,7 @@ For further context on this process, you can read [this companion document](http
 ## Summary
 
 - [ ]  1. The need for audits is determined during Risk Modeling in the Design Phase of the SDLC.
-- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start a Security Readiness Review document](https://www.notion.so/oplabs/Security-Readiness-Document-1a8f153ee1628045b467c262fae21975), which will be continuously updated.
+- [ ]  2. During the [Design Review](./sdlc.md#step-1-design-review-if-applicable), [start a Security Readiness Review document](https://www.notion.so/oplabs/190f153ee16280f397f2ee0329aef864), which will be updated as necessary.
 - [ ]  3. When implementation and testing are about two weeks from the release date, complete the Security Readiness Review document and arrange an audit. If using Spearbit, share your [Security Readiness Review document](./security-readiness-template.md) in the #oplabs-spearbit-external channel and tag `@Sharon Ideguchi` & `@Marc Nicholson` in your request. If you do not have access to the Slack channel, please contact EVM Security.
 - [ ]  4. This will result in an SOW from Spearbit, which you'll have to log in the Zip system.
 - [ ]  5. [Execute the audit](#audit-execution).
