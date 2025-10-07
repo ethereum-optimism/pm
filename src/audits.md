@@ -62,7 +62,7 @@ For all audit findings that we will fix as part of a later feature, create an is
 
 ## After Each Audit
 
-Once all the fixes are applied and reviewed, the project lead should upload the final audit report [to our repo](https://github.com/ethereum-optimism/optimism/tree/develop/docs/security-reviews).
+Once all the fixes are applied and reviewed, the project lead should upload the final audit report [to our repo](https://github.com/ethereum-optimism/optimism/tree/develop/docs/security-reviews). Please make sure that the keccak256 digest of every audited file is included in the report.
 
 If a valid high severity vulnerability was found, and this is the last expected audit for the project, **[a post-mortem must be conducted](./audit-post-mortem.md) and another audit of the same type must be scheduled**. These new audits follow the same process as any other audit.
 
