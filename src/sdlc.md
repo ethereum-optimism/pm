@@ -66,6 +66,7 @@ Now that the problem, requirements, and customers are known, create a design doc
     5. **Proofs:** Paul Dowman
     6. **Platforms:** Alfonso Munoz de Laborde
     7. **EVM Safety:** Matt Solomon
+    8. **Developer Advisory Board (DAB):** Wildmolasses (Ed) via #ext-dab Slack channel
 4. Ask Lewej Whitelow or Aaron Levin to schedule a design review. Include the team representatives and any other stakeholders/customers on the invite.
 
 #### Specs
@@ -75,8 +76,8 @@ Good specs will clearly document assumptions and invariants, see the [AnchorStat
 
 #### Determine governance impact
 
-As you develop a design for your change, you’ll need to determine if the change requires governance.
-Changes that affect consensus, touch smart contracts on L1, modify predeploys, or impact transaction ordering will generally require governance approval.
+As you develop a design for your change, you’ll need to determine if the change requires a regular governance process or a maintenance upgrade process.
+Changes that affect consensus, touch smart contracts on L1, modify predeploys, or impact transaction ordering will generally require a regular governance process.
 If you’re unsure, consult Ben Jones.
 
 For full criteria and examples for determining if governance is needed, refer to the [Governance Criteria](./governance-criteria.md) and the [Law of Chains](https://github.com/ethereum-optimism/OPerating-manual/blob/main/Law%20of%20Chains.md) user protections.
@@ -103,6 +104,7 @@ At this stage, you can start writing your code. Make sure you follow these stand
 - For new features, add [acceptance tests](./acceptance-testing/index.md).
 - For smart contracts the specs must clearly define assumptions and invariants as described [above](#specs), and you must have ~100% test coverage.
 - Include any changes to [OPCM](https://devdocs.optimism.io/contracts-bedrock/contributing/opcm.html) and VerifyOPCM.
+- Make sure to give access to and tag @wildmolasses (Ed) from the Developer Advisory Board in any (draft) specs.
 
 ### Step 3a: Create Superchain Ops tasks (L1 upgrades only)
 
@@ -117,6 +119,13 @@ Contact Blaine Malone for help with this.
 - The audit must be completed, with fixes implemented, before Sepolia rollout.
 - If there are high severity issues, do NOT proceed to the next step after fixing them—instead, perform a retro to see how those issues got in, and what else may have been missed as a result.
 
+### Step 3c: Draft Governance proposal
+
+- Once code and specs are complete, the governance proposal should be drafted and shared with the Developer Advisory Board (tag @wildmolasses (Ed) in the #ext-dab Slack channel
+- This first draft of the governance proposal may be shared as a notion or google doc, and at this stage does not need to include elements like the absolute prestate hash, transaction payloads etc.
+- It should all other information mentioned the [governance proposal template](https://github.com/ethereum-optimism/OPerating-manual/blob/main/Protocol%20Upgrade%20Template.md) like the specs, motivation and technical documentation
+- This allows the Developer Advisory Board to pre-read the proposal before its publication, and provide early feedback.
+
 ### Step 4: Alphanet/Betanet devnet rollout
 
 > [!WARNING] Prerequisites for the final betanet
@@ -125,12 +134,26 @@ Contact Blaine Malone for help with this.
 > - Specs
 > - Completion of risk modeling
 > - Implementation of mitigations identified by risk modeling (tests, monitors, runbooks, etc.)
-> - Governance impact analysis
+> - Governance impact analysis and draft proposal
 > - Audit execution and required fixes
 
 Next, it’s time to roll out to the Alphanet, then the Betanet. See the [release process](release-process.md) and [acceptance testing](acceptance-testing/index.md) docs for more details.
 
 You may deploy to multiple betanets if needed, for example to rehearse an upgrade process, but the final betanet must have no known issues and must result in no new issues being discovered.
+
+### Step 4a: Publish Governance proposal
+
+- Once the absolute prestate hash, Monorepo Commit Hash, OPCM version, L1 transaction payload are known, they should be added to the draft governance proposal
+- At this point, the DAB should have reviewed the draft and provided feedback
+- Obtain Foundation and Legal approval
+    - Loop in Ben Jones, Julian Wahl and Bobby Dresser from the Foundation
+    - Loop in Eric Van Wart from legal
+- Post the proposal on the governance forum
+    - Let the DAB lead (wildmolasses (Ed) know via Slack)
+- Once published to the forum, the approval and veto periods begin, and take approximately 14 days to complete for non-maintenance upgrades, and 7 days for maintenance upgrades
+
+The Sepolia rollout can happen in parallel.
+
 
 ### Step 5: Sepolia rollout
 
@@ -140,19 +163,6 @@ This is why the betanet in the prior step must have no known issues and must res
 Coordinate with DevRel and external partners that may be affected.
 Sepolia must match mainnet as much as possible, including for partner configurations.
 
-### Step 6: Governance proposal (if governance is needed)
-
-1. **Prepare Proposal:**
-    - Reference a stable release candidate.
-    - Include all relevant info such as risk modeling results, audits, Sepolia performance, and activation schedule.
-    - Use the standard governance [template](https://gov.optimism.io/t/season-6-charter-aware-upgrade-proposal-template/8134).
-2. **Review & Post:**
-    - Obtain Foundation and Legal approval.
-        - Loop in Ben Jones and Bobby Dresser from the Foundation.
-        - Loop in Eric Van Wart from legal.
-    - Post the proposal on governance forums.
-3. **Approval & Veto:**
-    - Wait for the vote and veto period to complete.
 
 ### Step 7: Mainnet rollout
 
