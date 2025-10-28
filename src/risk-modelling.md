@@ -24,7 +24,7 @@ If using threat modelling, it is possible to use a more deterministic approach t
 
 To do so, audits wouldn't be initially included in developing the threat trees. Once the trees are completed, depending on the severity and likelihood of the outcomes, audits can be added as mitigations.
 
-If the severity or likelihood of a negative outcome is high (safety outcome possible with red or purple likelihood), you should consider first if there are any alternative mitigations that you can employ, such as refactoring the project or adding redundancies or safeguards. An audit only provides a limite amount of safety.
+If the severity or likelihood of a negative outcome is high (safety outcome possible with red or purple likelihood), you should consider first if there are any alternative mitigations that you can employ, such as refactoring the project or adding redundancies or safeguards. An audit only provides a limited amount of safety.
 
 It is suggested that safety outcomes with yellow or worse likelihood undergo an audit. Likewise for liveness outcomes with red or worse likelihood. The effectiveness of the audit in lowering likelihoods in the threat model is left to the DRI.
 
