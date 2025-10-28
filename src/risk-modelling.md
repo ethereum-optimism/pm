@@ -14,17 +14,23 @@ FMAs live in the [design-docs](https://github.com/ethereum-optimism/design-docs/
 Alternatively to an FMA, you can also create a threat model. To do so, duplicate [this board in Miro](https://miro.com/app/board/uXjVJZcWoL4=/?share_link_id=116069408256) and follow the instructions inside. Use other threat models for inspiration, and refer to them when possible instead of duplicating content.
 
 # Determine Audit Requirements
-The knowledge obtained in writing the FMA will help you determine the [audit](./audits.md) requirements for your project. EVM Safety is available if you need advice on this step.
+It is the responsiblity of the project DRI to determine if an external audit is needed. The knowledge obtained in writing the FMA will help you determine the [audit](./audits.md) requirements for your project. EVM Safety is available if you need advice on this step.
 
-For context, please read [this framework from John Mardlin](https://gov.optimism.io/t/op-labs-audit-framework-when-to-get-external-security-review-and-how-to-prepare-for-it/6864). The process belows refines it.
+For context, please read [this framework from John Mardlin](https://gov.optimism.io/t/op-labs-audit-framework-when-to-get-external-security-review-and-how-to-prepare-for-it/6864). 
 
-Do threat modelling of your feature, in doing so, do not consider audits as mitigations yet. When the threat modelling is complete, use the scale below:
+## Using threat modelling to determine audit requirements
 
-- Safety outcome possible with red or purple likelihood: break the feature down or refactor it for increased safety.
-- Safety outcome possible with yellow likelihood: audit required as a mitigation, which reduces the likelihood by one level.
-- Liveness outcome possible with red or purple likelihood: audit required as a mitigation, which reduces the likelihood by one level.
-- Partner requires an audit: audit required.
-- Any other scenario: no audit required.
+If using threat modelling, it is possible to use a more deterministic approach to answer whether an audit is needed or not.
+
+To do so, audits wouldn't be initially included in developing the threat trees. Once the trees are completed, depending on the severity and likelihood of the outcomes, audits can be added as mitigations.
+
+If the severity or likelihood of a negative outcome is high (safety outcome possible with red or purple likelihood), you should consider first if there are any alternative mitigations that you can employ, such as refactoring the project or adding redundancies or safeguards. An audit only provides a limite amount of safety.
+
+It is suggested that safety outcomes with yellow or worse likelihood undergo an audit. Likewise for liveness outcomes with red or worse likelihood. The effectiveness of the audit in lowering likelihoods in the threat model is left to the DRI.
+
+Partners might require an audit, we do not have a process to determine this at the moment, but you should socialize the project with the affected partners and gather feedback.
+
+This leaves that some projects might not need an audit, in particular those where safety outcomes are all green before audits, and liveness outcomes are at most yellow, also before audits.
 
 # Table of Failure Modes Analyses
 
