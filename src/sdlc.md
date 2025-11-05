@@ -67,7 +67,7 @@ Now that the problem, requirements, and customers are known, create a design doc
     6. **Platforms:** Alfonso Munoz de Laborde
     7. **EVM Safety:** Matt Solomon
     8. **Developer Advisory Board (DAB):** Wildmolasses (Ed) via #ext-dab Slack channel
-4. Ask Lewej Whitelow or Aaron Levin to schedule a design review. Include the team representatives and any other stakeholders/customers on the invite.
+4. Schedule a design review, include the team representatives and any other stakeholders/customers on the invite.
 
 #### Specs
 
