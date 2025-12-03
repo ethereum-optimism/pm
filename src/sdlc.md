@@ -143,6 +143,11 @@ You may deploy to multiple betanets if needed, for example to rehearse an upgrad
 
 ### Step 4a: Publish Governance proposal
 
+> [!IMPORTANT]
+> Final betanet testing must be complete before the governance proposal is published.
+> There should be _full_ confidence in the on-chain and off-chain code, including any activation timestamps, absolute prestate hash and contract deployment addresses.
+> Governance posts should not be published optimistically in an attempt to save time by running betanet testing in parallel.
+
 - Once the absolute prestate hash, Monorepo Commit Hash, OPCM version, L1 transaction payload are known, they should be added to the draft governance proposal
 - At this point, the DAB should have reviewed the draft and provided feedback
 - Obtain Foundation and Legal approval
