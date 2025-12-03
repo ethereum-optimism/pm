@@ -109,7 +109,12 @@ At this stage, you can start writing your code. Make sure you follow these stand
 ### Step 3a: Create Superchain Ops tasks (L1 upgrades only)
 
 If your change modifies L1 smart contracts, you’ll need a `superchain-ops` playbook to execute the multisig transactions.
-Contact Blaine Malone for help with this.
+
+This is typically handled by DevRel and EVM Safety teams.
+
+> [!WARNING] Ensure that the tasks are _merged_ before executing them.
+> This ensures any simulations that run in CI take account of all changes that are being prepared holistically.
+> Failure to do this can result in tasks which pass simulations during preparation but which ultimately fail during execution.
 
 ### Step 3b: Audit execution
 
