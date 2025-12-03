@@ -9,7 +9,8 @@ If you deviate, note the deviation and rationale somewhere that isn't Slack (e.g
 
 ---
 
-> [!IMPORTANT] Guiding Principle: Always Be Release Ready
+> [!IMPORTANT]
+> Guiding Principle: Always Be Release Ready
 >
 > - At any time, the latest `develop` should be shippable via our deployment pipeline. Build confidence in correctness and security continually throughout the development lifecycle, not only at the end.
 > - Build in vertical slices: split fixes or features into end-to-end increments that can ship independently.
@@ -112,7 +113,8 @@ If your change modifies L1 smart contracts, you’ll need a `superchain-ops` pla
 
 This is typically handled by Solutions and EVM Safety teams.
 
-> [!WARNING] Ensure that the tasks are _merged_ before executing them.
+> [!WARNING]
+> Ensure that the tasks are _merged_ before executing them.
 > This ensures any simulations that run in CI take account of all changes that are being prepared holistically.
 > Failure to do this can result in tasks which pass simulations during preparation but which ultimately fail during execution.
 
@@ -133,7 +135,8 @@ This is typically handled by Solutions and EVM Safety teams.
 
 ### Step 4: Alphanet/Betanet devnet rollout
 
-> [!WARNING] Prerequisites for the final betanet
+> [!WARNING]
+> Prerequisites for the final betanet
 > All of the steps above MUST be completed before the final betanet. That includes:
 >
 > - Specs
