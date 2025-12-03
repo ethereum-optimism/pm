@@ -110,7 +110,7 @@ At this stage, you can start writing your code. Make sure you follow these stand
 
 If your change modifies L1 smart contracts, you’ll need a `superchain-ops` playbook to execute the multisig transactions.
 
-This is typically handled by DevRel and EVM Safety teams.
+This is typically handled by Solutions and EVM Safety teams.
 
 > [!WARNING] Ensure that the tasks are _merged_ before executing them.
 > This ensures any simulations that run in CI take account of all changes that are being prepared holistically.
@@ -149,7 +149,7 @@ You may deploy to multiple betanets if needed, for example to rehearse an upgrad
 ### Step 4a: Publish Governance proposal
 
 > [!IMPORTANT]
-> Final betanet testing must be complete before the governance proposal is published.
+> Final alphanet and betanet testing must be complete before the governance proposal is published.
 > There should be _full_ confidence in the on-chain and off-chain code, including any activation timestamps, absolute prestate hash and contract deployment addresses.
 > Governance posts should not be published optimistically in an attempt to save time by running betanet testing in parallel.
 
