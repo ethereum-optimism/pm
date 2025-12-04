@@ -80,6 +80,10 @@ A new Kubernetes-based network typically requires about 30mins to fully startup 
 Note: For testing a flashblocks-enabled network, refer to this (Flashblocks RRC](https://www.notion.so/oplabs/Flashblocks-Release-Readiness-Checklist-1faf153ee16280ac80d8cda0162f2392).
 
 ### Automated Testing
+
+See [this runbook](https://www.notion.so/oplabs/Devnet-Acceptance-Testing-2bef153ee1628062b22cdf55f1047c55?v=d784200583d9415587c4dcd2b0c64b2f&source=copy_link)
+for an in-depth guide.
+
 Run automated acceptance tests using [op-acceptor](https://github.com/ethereum-optimism/optimism/tree/develop/op-acceptance-tests).
    - Use the appropriate feature gate for the target network. This should not be `base`, but will include it. It should be one of the latest forks, such as `interop` or `flashblocks` which pertains to what the network is deployed as and testing.
 

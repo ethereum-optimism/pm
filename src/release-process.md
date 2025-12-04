@@ -64,7 +64,9 @@ for a Betanet once the scope has been finalized, create a new issue on the
 ## Acceptance Testing
 
 Promoting a feature from Alphanet to Betanet and beyond is contingent upon the feature passing automated acceptance
-tests. See the [Acceptance Testing](./acceptance-testing/index.md) document for more information.
+tests. See the [Acceptance Testing](./acceptance-testing/index.md) document for more information and
+[this runbook](https://www.notion.so/oplabs/Devnet-Acceptance-Testing-2bef153ee1628062b22cdf55f1047c55?v=d784200583d9415587c4dcd2b0c64b2f&source=copy_link)
+for tips and tricks.
 
 ## Testnet
 
