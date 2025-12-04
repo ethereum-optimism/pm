@@ -9,7 +9,8 @@ If you deviate, note the deviation and rationale somewhere that isn't Slack (e.g
 
 ---
 
-> [!IMPORTANT] Guiding Principle: Always Be Release Ready
+> [!IMPORTANT]
+> Guiding Principle: Always Be Release Ready
 >
 > - At any time, the latest `develop` should be shippable via our deployment pipeline. Build confidence in correctness and security continually throughout the development lifecycle, not only at the end.
 > - Build in vertical slices: split fixes or features into end-to-end increments that can ship independently.
@@ -109,7 +110,13 @@ At this stage, you can start writing your code. Make sure you follow these stand
 ### Step 3a: Create Superchain Ops tasks (L1 upgrades only)
 
 If your change modifies L1 smart contracts, you’ll need a `superchain-ops` playbook to execute the multisig transactions.
-Contact Blaine Malone for help with this.
+
+This is typically handled by Solutions and EVM Safety teams.
+
+> [!WARNING]
+> Ensure that the tasks are _merged_ before executing them.
+> This ensures any simulations that run in CI take account of all changes that are being prepared holistically.
+> Failure to do this can result in tasks which pass simulations during preparation but which ultimately fail during execution.
 
 ### Step 3b: Audit execution
 
@@ -128,7 +135,8 @@ Contact Blaine Malone for help with this.
 
 ### Step 4: Alphanet/Betanet devnet rollout
 
-> [!WARNING] Prerequisites for the final betanet
+> [!WARNING]
+> Prerequisites for the final betanet
 > All of the steps above MUST be completed before the final betanet. That includes:
 >
 > - Specs
@@ -142,6 +150,11 @@ Next, it’s time to roll out to the Alphanet, then the Betanet. See the [releas
 You may deploy to multiple betanets if needed, for example to rehearse an upgrade process, but the final betanet must have no known issues and must result in no new issues being discovered.
 
 ### Step 4a: Publish Governance proposal
+
+> [!IMPORTANT]
+> Final alphanet and betanet testing must be complete before the governance proposal is published.
+> There should be _full_ confidence in the on-chain and off-chain code, including any activation timestamps, absolute prestate hash and contract deployment addresses.
+> Governance posts should not be published optimistically in an attempt to save time by running betanet testing in parallel.
 
 - Once the absolute prestate hash, Monorepo Commit Hash, OPCM version, L1 transaction payload are known, they should be added to the draft governance proposal
 - At this point, the DAB should have reviewed the draft and provided feedback
